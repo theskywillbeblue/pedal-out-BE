@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   {
     full_name: "James Wilson",
     username: "jwilson_rider42795",
@@ -416,5 +416,5 @@ export default [
     created_at: "2025-03-26T09:47:29Z",
     location: "Swindon",
     email: "daisy.phillips@outlook.com",
-  },
+  }
 ];
