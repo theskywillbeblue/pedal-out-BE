@@ -1,4 +1,4 @@
-export default [
+module.exports = [
     {
       full_name: "James Wilson",
       username: "jwilson_rider42795",
