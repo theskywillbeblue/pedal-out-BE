@@ -8,8 +8,8 @@ module.exports = [
         description: "Flowy trails, berms, and a mid-ride snack stop!",
         discipline: "Mountain",
         title: "Berms & Brews",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "sophiaP_2025xyzq",
@@ -20,8 +20,8 @@ module.exports = [
         description: "Flowy trails, berms, and a mid-ride snack stop!",
         discipline: "Cross Country",
         title: "Trail Tour",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "amelia_hughes97",
@@ -32,8 +32,8 @@ module.exports = [
         description: "Social pace with time to chat, ride, and maybe get a bit muddy.",
         discipline: "Casual",
         title: "Scenic Spin",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "avaR1chards0n_uk",
@@ -44,8 +44,8 @@ module.exports = [
         description: "Techy loop with roots, rocks, and optional spicy lines.",
         discipline: "Enduro",
         title: "Tech Loop and Chill",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "charlotteS_7531",
@@ -56,8 +56,8 @@ module.exports = [
         description: "Climbing legs ready? We’ll earn our turns and enjoy the ride down.",
         discipline: "Gravel",
         title: "Chilled Out Climb",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "ethan_m0rr1s_uk",
@@ -68,8 +68,8 @@ module.exports = [
         description: "Exploring some hidden gems – expect the unexpected.",
         discipline: "Cross Country",
         title: "Trail Snacks & Switchbacks",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "will_clarke_2025",
@@ -80,8 +80,8 @@ module.exports = [
         description: "Sending some lines and sessioning jumps. Pads recommended!",
         discipline: "Park",
         title: "Bikepark Bash",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "mike_reynolds_mtb",
@@ -92,8 +92,8 @@ module.exports = [
         description: "Quick blast through some flowy singletrack – all levels welcome!",
         discipline: "Casual",
         title: "Early Bird Loam Hunt",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "emmaThomp5on9876",
@@ -104,8 +104,8 @@ module.exports = [
         description: "Easygoing ride, great for newer riders or recovery days.",
         discipline: "Mountain",
         title: "Sunday Spinners",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "jwilson_rider42795",
@@ -116,8 +116,8 @@ module.exports = [
         description: "You set the pace, we’ll bring the trails.",
         discipline: "Cross Country",
         title: "Pedal Party",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "alex_davies_2025",
@@ -128,11 +128,11 @@ module.exports = [
         description: "Skills-focused session – corners, drops, and line choice!",
         discipline: "Downhill",
         title: "Gravity Day Out",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
-        author: "daniel.walker@gmail.co.uk",
+        author: "d4n_w4lk3r_c0d3",
         ride_location: { lat: 51.4545, lng: -2.5879 },
         created_at: "2025-02-28T11:22:42",
         ride_date: "2025-03-22",
@@ -140,8 +140,8 @@ module.exports = [
         description: "Flowy trails, berms, and a mid-ride snack stop!",
         discipline: "Park",
         title: "Trail Shred Session",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "tomG_enduro_25",
@@ -152,8 +152,8 @@ module.exports = [
         description: "Techy loop with roots, rocks, and optional spicy lines.",
         discipline: "Enduro",
         title: "Downhill Dash",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "amelia_hughes97",
@@ -164,8 +164,8 @@ module.exports = [
         description: "Climbing legs ready? We’ll earn our turns and enjoy the ride down.",
         discipline: "Mountain",
         title: "Weekend Sendfest",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "n0ah_ahm3d_mtb",
@@ -176,8 +176,8 @@ module.exports = [
         description: "Quick blast through some flowy singletrack – all levels welcome!",
         discipline: "Cross Country",
         title: "Post-Work Flow Jam",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "rob_j_mtb_rider",
@@ -188,8 +188,8 @@ module.exports = [
         description: "Exploring some hidden gems – expect the unexpected.",
         discipline: "Gravel",
         title: "Trail Tour",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "avaR1chards0n_uk",
@@ -200,8 +200,8 @@ module.exports = [
         description: "You set the pace, we’ll bring the trails.",
         discipline: "Casual",
         title: "Coffee & Cranks",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "charlotteS_7531",
@@ -212,8 +212,8 @@ module.exports = [
         description: "Social pace with time to chat, ride, and maybe get a bit muddy.",
         discipline: "Gravel",
         title: "Muddy Buddy Ride",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "emmaThomp5on9876",
@@ -224,11 +224,11 @@ module.exports = [
         description: "Techy loop with roots, rocks, and optional spicy lines.",
         discipline: "Mountain",
         title: "Gnar & Chill",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
-        author: "jacob.taylor.trails@outlook.com",
+        author: "j_taylor_trails",
         ride_location: { lat: 50.7192, lng: -1.8808 },
         created_at: "2025-03-12T12:33:12",
         ride_date: "2025-04-01",
@@ -236,7 +236,7 @@ module.exports = [
         description: "Skills-focused session – corners, drops, and line choice!",
         discipline: "Downhill",
         title: "Trail Snacks & Switchbacks",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     } 
 ];

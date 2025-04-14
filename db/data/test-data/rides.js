@@ -8,8 +8,8 @@ module.exports = [
         description: "Gonna hit some jumps and tech lines at BPW. Bring pads and let’s send it!",
         discipline: "Downhill",
         title: "Shred Day at BPW – Jumps, Berms & Gnar!",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "alex_davies_2025",
@@ -20,8 +20,8 @@ module.exports = [
         description: "Chilled cruise along the Downs. Nothing too crazy, just good views and mellow vibes.",
         discipline: "Casual",
         title: "Sunday Cruise on the Downs",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "jwilson_rider42795",
@@ -32,8 +32,8 @@ module.exports = [
         description: "Some techy climbs and spicy descents in the Lakes. Should be a proper fun loop!",
         discipline: "Enduro",
         title: "Lake District Tech Loop – Let’s Get Rowdy!",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "charlotteS_7531",
@@ -44,8 +44,8 @@ module.exports = [
         description: "XC ride with some flow and a mandatory coffee stop after. Nothing too intense!",
         discipline: "Cross Country",
         title: "XC & Espresso – Cwmcarn Edition",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     },
     {
         author: "tomG_enduro_25",
@@ -56,7 +56,7 @@ module.exports = [
         description: "Mix of chill and techy lines at Haldon. Good for dialing in some skills and having a laugh.",
         discipline: "Enduro",
         title: "Afternoon Tech at Haldon – Flow Meets Focus",
-        public: true,
-        participants: []
+        is_public: true,
+        participants: {}
     }
 ]

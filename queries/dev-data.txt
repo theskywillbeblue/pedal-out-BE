@@ -1,0 +1,123 @@
+    full_name     |      username      |                                                    avatar_img                                                     | is_public |     created_at      |   location    
+------------------+--------------------+-------------------------------------------------------------------------------------------------------------------+-----------+---------------------+---------------
+ James Wilson     | jwilson_rider42795 | https://images.unsplash.com/photo-1541625602330-2277a4c46182?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-01-15 09:17:23 | Edinburgh
+ Noah Ahmed       | n0ah_ahm3d_mtb     | https://images.unsplash.com/photo-1554201920-c8efd9553c4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80    | t         | 2025-02-11 15:47:36 | Bristol
+ William Clarke   | will_clarke_2025   | https://images.unsplash.com/photo-1505705694340-019e1e335916?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-02-04 08:19:42 | Leeds
+ Sophia Patel     | sophiaP_2025xyzq   | https://images.unsplash.com/photo-1524143986875-3b098d78b363?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-01-07 21:05:18 | Birmingham
+ Ethan Morris     | ethan_m0rr1s_uk    | https://images.unsplash.com/photo-1618762044398-ec1e2048ba77?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-01-22 19:41:07 | Liverpool
+ Alexander Davies | alex_davies_2025   | https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-01-11 13:56:28 | Southampton
+ Charlotte Singh  | charlotteS_7531    | https://images.unsplash.com/photo-1598881034666-8de527ed9bc2?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-02-19 10:12:33 | Cardiff
+ Daniel Walker    | d4n_w4lk3r_c0d3    | https://images.unsplash.com/photo-1623610249830-001d1b60ba66?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-02-28 07:23:59 | Oxford
+ Emma Thompson    | emmaThomp5on9876   | https://images.unsplash.com/photo-1526787341486-2659f2713016?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-01-29 11:23:54 | Glasgow
+ Jacob Taylor     | j_taylor_trails    | https://images.unsplash.com/photo-1546435770-a3e426bf472b?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80    | t         | 2025-03-22 12:45:37 | Brighton
+ Michael Reynolds | mike_reynolds_mtb  | https://images.unsplash.com/photo-1553502751-9c623d9c834c?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80    | t         | 2025-01-31 08:14:22 | Reading
+ Thomas Greene    | tomG_enduro_25     | https://images.unsplash.com/photo-1571074635691-b9d85053a3e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-02-17 16:35:41 | Exeter
+ Amelia Hughes    | amelia_hughes97    | https://images.unsplash.com/photo-1573497019236-61f684d360ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-01-19 17:08:42 | Nottingham
+ Robert Jenkins   | rob_j_mtb_rider    | https://images.unsplash.com/photo-1544983051-ca6a15819dfb?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80    | t         | 2025-03-09 11:27:39 | Sheffield
+ Ava Richardson   | avaR1chards0n_uk   | https://images.unsplash.com/photo-1605027990362-439716c80fbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-02-14 14:21:06 | Belfast
+ Samuel Bennett   | sam_bennett_mtb    | https://images.unsplash.com/photo-1612886216371-4ef868e15650?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-01-09 16:43:22 | Guildford
+ Oliver Harrison  | ollie_rides_94     | https://images.unsplash.com/photo-1559348349-86d1d7d3b98a?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80    | t         | 2025-02-22 09:15:37 | Chester
+ Isla McLean      | isla_mclean_mtb    | https://images.unsplash.com/photo-1631051454124-b6b5c5b3c4e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-01-23 14:28:51 | Inverness
+ George Stewart   | geo_stew_enduro    | https://images.unsplash.com/photo-1625662171891-9a8596e76b4a?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-03-07 11:39:16 | Portsmouth
+ Freya Johnson    | freya_j_rides      | https://images.unsplash.com/photo-1506625501429-b5c9c53a6974?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-02-09 08:56:41 | York
+ Benjamin Lewis   | ben_lewis_mtb25    | https://images.unsplash.com/photo-1574704578617-d902f96aa98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-01-17 17:22:39 | Manchester
+ Zoe Campbell     | zoe_c_mtb_2025     | https://images.unsplash.com/photo-1602022683464-36f4e949a4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-02-26 13:41:09 | Derby
+ Harry Mitchell   | hmitch_rider       | https://images.unsplash.com/photo-1592184071566-28b9b88f41e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-03-14 09:34:27 | Swansea
+ Lily Watson      | lily_w_trails      | https://images.unsplash.com/photo-1583225214464-9296029427aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-01-28 16:19:58 | Norwich
+ Oscar Williams   | oscar_rides_25     | https://images.unsplash.com/photo-1508789454646-bef72439f197?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-02-03 10:27:33 | Bath
+ Isabella Parker  | izzy_p_mtb         | https://images.unsplash.com/photo-1563911892437-1feda0179e1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-03-01 08:44:16 | Cambridge
+ Leo Robinson     | leo_rob_trails     | https://images.unsplash.com/photo-1516246281830-19f982e2d2e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-01-26 12:51:42 | Milton Keynes
+ Grace Turner     | grace_t_rides      | https://images.unsplash.com/photo-1597784055307-abe26d212342?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-02-18 15:36:29 | Bournemouth
+ Jack Foster      | jack_f0ster_mtb    | https://images.unsplash.com/photo-1616471915816-935faaa65652?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-03-11 17:28:51 | Coventry
+ Rosie Collins    | rosie_c0llins      | https://images.unsplash.com/photo-1611686692109-9d149e542f35?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-01-08 18:39:47 | Cheltenham
+ Max Cooper       | max_c00per_mtb     | https://images.unsplash.com/photo-1614458929280-28e573e8e792?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-02-24 10:13:59 | Plymouth
+ Florence Young   | flo_young_rider    | https://images.unsplash.com/photo-1598214825383-4b4eda7c6857?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-03-19 14:27:38 | Leicester
+ Edward Baker     | ed_baker_mtb25     | https://images.unsplash.com/photo-1558522195-e1201b090344?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80    | t         | 2025-01-21 09:38:26 | Eastbourne
+ Alice Carter     | alice_rides_mtb    | https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-02-07 16:42:18 | Aberdeen
+ Theo Ward        | theo_ward_trails   | https://images.unsplash.com/photo-1622559924472-2c2eb5ed2d68?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-03-04 13:19:51 | Preston
+ Maisie Jackson   | maisie_j_rides     | https://images.unsplash.com/photo-1554075946-fc2a494e91a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80    | t         | 2025-01-14 11:32:45 | Carlisle
+ Patrick Howard   | pat_h0ward_mtb     | https://images.unsplash.com/photo-1612886216372-f228c19bf0c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-02-13 18:23:57 | Durham
+ Daisy Phillips   | daisy_p_trails     | https://images.unsplash.com/photo-1511882617617-6a8cd07ba875?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80 | t         | 2025-03-26 09:47:29 | Swindon
+(38 rows)
+
+ comment_id | ride_id |                          body                          |       author       |     created_at      
+------------+---------+--------------------------------------------------------+--------------------+---------------------
+          1 |      12 | Count me in – been meaning to hit this trail for ages! | sophiaP_2025xyzq   | 2025-03-02 09:14:23
+          2 |       8 | Looks flowy! Perfect for a weekend spin.               | will_clarke_2025   | 2025-01-20 17:06:41
+          3 |      14 | Might bring the GoPro for this one 🔥                   | tomG_enduro_25     | 2025-02-28 13:29:55
+          4 |       3 | Let me know if you're bringing snacks 👀                | emmaThomp5on9876   | 2025-01-18 10:43:09
+          5 |      20 | I've got the morning free – I'm in!                    | amelia_hughes97    | 2025-03-06 08:11:27
+          6 |       1 | Great mix of trails, really enjoyed this route.        | jwilson_rider42795 | 2025-01-29 07:24:19
+          7 |      15 | Rain or shine, this one's going down 🌧️☀️                | n0ah_ahm3d_mtb     | 2025-03-09 14:32:48
+          8 |       7 | Such a chill vibe on this loop – will join again.      | alex_davies_2025   | 2025-02-19 11:15:05
+          9 |      11 | Anyone up for a post-ride pint?                        | mike_reynolds_mtb  | 2025-03-12 18:03:17
+         10 |      19 | Is this trail e-bike friendly?                         | avaR1chards0n_uk   | 2025-01-23 15:48:38
+         11 |       2 | Hyped for this – let's make it a good one!             | charlotteS_7531    | 2025-02-05 09:32:10
+         12 |       9 | Saving this one to repeat later. Loved the descents!   | j_taylor_trails    | 2025-03-08 17:21:04
+         13 |       4 | Got space in the van for one more?                     | d4n_w4lk3r_c0d3    | 2025-01-27 13:22:09
+         14 |       6 | Perfect pre-lunch loop – I'm down!                     | ethan_m0rr1s_uk    | 2025-02-14 08:18:33
+         15 |      10 | Let's hope the mud isn't too wild this time 😅          | rob_j_mtb_rider    | 2025-02-25 12:34:47
+         16 |      13 | Looks like there's some spicy features on this one 🔥   | will_clarke_2025   | 2025-03-04 15:16:22
+         17 |       5 | Might bring a mate along – that cool?                  | jwilson_rider42795 | 2025-01-31 10:42:55
+         18 |      17 | Anyone else doing a pre-ride warmup?                   | tomG_enduro_25     | 2025-02-22 07:55:18
+         19 |      16 | Fresh air, good vibes, and two wheels – sign me up!    | amelia_hughes97    | 2025-03-11 09:23:19
+         20 |      18 | This route's a hidden gem – thanks for posting!        | sophiaP_2025xyzq   | 2025-03-05 08:30:27
+         21 |      20 | Looks like a good mix of terrain. Can't wait!          | emmaThomp5on9876   | 2025-02-03 12:59:14
+         22 |       6 | Long climbs but rewarding views!                       | alex_davies_2025   | 2025-02-18 14:04:45
+         23 |       9 | Don't forget your spare tubes 😉                        | avaR1chards0n_uk   | 2025-03-13 16:11:22
+         24 |       3 | What's the best spot for parking?                      | n0ah_ahm3d_mtb     | 2025-01-25 08:50:07
+         25 |       7 | Early start but worth it every time.                   | charlotteS_7531    | 2025-03-02 06:42:10
+         26 |       8 | Just added this to my weekend plan 🙌                   | d4n_w4lk3r_c0d3    | 2025-01-30 17:13:49
+         27 |      14 | Will be testing out new tyres on this one.             | j_taylor_trails    | 2025-03-06 11:20:04
+         28 |       2 | Let's roll! Hope there's coffee at the end ☕           | mike_reynolds_mtb  | 2025-02-06 10:25:38
+         29 |       5 | Good excuse to clean the bike afterwards 😂             | ethan_m0rr1s_uk    | 2025-01-22 15:37:59
+         30 |      10 | Will be bringing the stoke and snacks 🔥                | amelia_hughes97    | 2025-02-27 18:19:51
+         31 |      13 | If the weather holds, this could be a banger.          | rob_j_mtb_rider    | 2025-03-07 08:14:01
+         32 |      11 | The climbs look brutal – I'm oddly excited.            | tomG_enduro_25     | 2025-01-26 16:28:44
+         33 |       4 | Count me in – bike's freshly serviced!                 | jwilson_rider42795 | 2025-02-20 14:41:03
+         34 |       6 | Will there be a lunch stop? I vote yes.                | n0ah_ahm3d_mtb     | 2025-03-10 09:10:50
+         35 |      15 | Cracking route – one of my faves!                      | will_clarke_2025   | 2025-03-01 07:36:23
+         36 |      19 | Bringing a new rider along – go easy on us!            | charlotteS_7531    | 2025-01-28 08:55:34
+         37 |      17 | Let's make it an all-dayer!                            | emmaThomp5on9876   | 2025-02-04 10:47:12
+         38 |      12 | Might bring the drone for some trail shots 🎥           | j_taylor_trails    | 2025-02-15 13:01:47
+         39 |       1 | Can't wait – this looks mint!                          | alex_davies_2025   | 2025-01-21 09:42:18
+         40 |      18 | That descent is calling my name 🔊                      | sophiaP_2025xyzq   | 2025-02-11 11:56:29
+         41 |      16 | Forecast says blue skies – let's ride 🌤️                | d4n_w4lk3r_c0d3    | 2025-03-03 07:20:17
+         42 |      11 | Any river crossings on this one?                       | avaR1chards0n_uk   | 2025-02-07 12:38:03
+         43 |      20 | Anyone bringing a camera? This place is photogenic.    | mike_reynolds_mtb  | 2025-01-24 13:42:59
+         44 |      14 | One of the best loops I've done – highly recommend!    | ethan_m0rr1s_uk    | 2025-02-26 14:13:39
+         45 |       8 | Great crew last time – looking forward to this!        | amelia_hughes97    | 2025-02-23 11:26:50
+         46 |       7 | Might ride singlespeed just for the challenge 🚴‍♂️      | will_clarke_2025   | 2025-02-16 17:29:34
+         47 |       3 | This one's got my name written all over it 😎           | tomG_enduro_25     | 2025-01-19 10:11:14
+         48 |       2 | Any bike wash stations nearby?                         | j_taylor_trails    | 2025-02-10 14:33:09
+         49 |       9 | Back for round two – that descent is addictive!        | charlotteS_7531    | 2025-01-17 07:44:38
+         50 |      13 | Solid loop. Good mix of chill and challenge!           | j_taylor_trails    | 2025-03-14 16:47:53
+         51 |       5 | Hope there's less wind than last time 😂                | alex_davies_2025   | 2025-02-13 09:55:25
+         52 |      17 | Let's gooo 🚵‍♀️                                         | rob_j_mtb_rider    | 2025-03-13 11:18:02
+         53 |       6 | Legs are sore just looking at the elevation 😂          | avaR1chards0n_uk   | 2025-03-12 15:33:06
+(53 rows)
+
+       author       | ride_id |          ride_location           |     created_at      | ride_date  | ride_time |                            description                             |  discipline   |           title            | is_public | participants 
+--------------------+---------+----------------------------------+---------------------+------------+-----------+--------------------------------------------------------------------+---------------+----------------------------+-----------+--------------
+ j_taylor_trails    |       1 | {"lat": 53.4084, "lng": -2.9916} | 2025-03-04 23:47:59 | 2025-03-05 | 12:45:00  | Flowy trails, berms, and a mid-ride snack stop!                    | Mountain      | Berms & Brews              | t         | {}
+ sophiaP_2025xyzq   |       2 | {"lat": 51.738, "lng": -3.3723}  | 2025-01-17 23:47:41 | 2025-02-04 | 06:45:00  | Flowy trails, berms, and a mid-ride snack stop!                    | Cross Country | Trail Tour                 | t         | {}
+ amelia_hughes97    |       3 | {"lat": 50.7192, "lng": -1.8808} | 2025-01-20 19:45:12 | 2025-02-11 | 09:00:00  | Social pace with time to chat, ride, and maybe get a bit muddy.    | Casual        | Scenic Spin                | t         | {}
+ avaR1chards0n_uk   |       4 | {"lat": 52.5269, "lng": -3.8571} | 2025-03-07 04:10:27 | 2025-03-30 | 18:45:00  | Techy loop with roots, rocks, and optional spicy lines.            | Enduro        | Tech Loop and Chill        | t         | {}
+ charlotteS_7531    |       5 | {"lat": 51.4545, "lng": -2.5879} | 2025-02-19 01:05:08 | 2025-03-12 | 10:15:00  | Climbing legs ready? We’ll earn our turns and enjoy the ride down. | Gravel        | Chilled Out Climb          | t         | {}
+ ethan_m0rr1s_uk    |       6 | {"lat": 54.4609, "lng": -3.0886} | 2025-01-23 06:23:12 | 2025-02-15 | 15:00:00  | Exploring some hidden gems – expect the unexpected.                | Cross Country | Trail Snacks & Switchbacks | t         | {}
+ will_clarke_2025   |       7 | {"lat": 53.8008, "lng": -1.5491} | 2025-03-02 22:51:22 | 2025-03-17 | 14:00:00  | Sending some lines and sessioning jumps. Pads recommended!         | Park          | Bikepark Bash              | t         | {}
+ mike_reynolds_mtb  |       8 | {"lat": 51.7097, "lng": -3.5204} | 2025-02-01 08:19:42 | 2025-02-27 | 07:15:00  | Quick blast through some flowy singletrack – all levels welcome!   | Casual        | Early Bird Loam Hunt       | t         | {}
+ emmaThomp5on9876   |       9 | {"lat": 55.8609, "lng": -4.2514} | 2025-01-29 14:03:22 | 2025-02-23 | 19:45:00  | Easygoing ride, great for newer riders or recovery days.           | Mountain      | Sunday Spinners            | t         | {}
+ jwilson_rider42795 |      10 | {"lat": 52.5269, "lng": -3.8571} | 2025-03-06 10:11:01 | 2025-03-21 | 13:30:00  | You set the pace, we’ll bring the trails.                          | Cross Country | Pedal Party                | t         | {}
+ alex_davies_2025   |      11 | {"lat": 53.4084, "lng": -2.9916} | 2025-01-16 15:45:20 | 2025-02-04 | 08:15:00  | Skills-focused session – corners, drops, and line choice!          | Downhill      | Gravity Day Out            | t         | {}
+ d4n_w4lk3r_c0d3    |      12 | {"lat": 51.4545, "lng": -2.5879} | 2025-02-28 11:22:42 | 2025-03-22 | 11:45:00  | Flowy trails, berms, and a mid-ride snack stop!                    | Park          | Trail Shred Session        | t         | {}
+ tomG_enduro_25     |      13 | {"lat": 51.7167, "lng": -0.1944} | 2025-02-19 22:15:03 | 2025-03-05 | 17:30:00  | Techy loop with roots, rocks, and optional spicy lines.            | Enduro        | Downhill Dash              | t         | {}
+ amelia_hughes97    |      14 | {"lat": 54.4609, "lng": -3.0886} | 2025-01-31 08:43:19 | 2025-02-27 | 10:45:00  | Climbing legs ready? We’ll earn our turns and enjoy the ride down. | Mountain      | Weekend Sendfest           | t         | {}
+ n0ah_ahm3d_mtb     |      15 | {"lat": 53.8008, "lng": -1.5491} | 2025-01-20 19:24:30 | 2025-02-16 | 20:15:00  | Quick blast through some flowy singletrack – all levels welcome!   | Cross Country | Post-Work Flow Jam         | t         | {}
+ rob_j_mtb_rider    |      16 | {"lat": 51.4545, "lng": -2.5879} | 2025-03-10 17:23:45 | 2025-03-27 | 16:30:00  | Exploring some hidden gems – expect the unexpected.                | Gravel        | Trail Tour                 | t         | {}
+ avaR1chards0n_uk   |      17 | {"lat": 51.738, "lng": -3.3723}  | 2025-02-22 09:45:10 | 2025-03-15 | 07:00:00  | You set the pace, we’ll bring the trails.                          | Casual        | Coffee & Cranks            | t         | {}
+ charlotteS_7531    |      18 | {"lat": 52.5269, "lng": -3.8571} | 2025-02-25 10:47:58 | 2025-03-19 | 09:15:00  | Social pace with time to chat, ride, and maybe get a bit muddy.    | Gravel        | Muddy Buddy Ride           | t         | {}
+ emmaThomp5on9876   |      19 | {"lat": 51.7167, "lng": -0.1944} | 2025-03-03 21:02:11 | 2025-03-25 | 12:30:00  | Techy loop with roots, rocks, and optional spicy lines.            | Mountain      | Gnar & Chill               | t         | {}
+ j_taylor_trails    |      20 | {"lat": 50.7192, "lng": -1.8808} | 2025-03-12 12:33:12 | 2025-04-01 | 08:45:00  | Skills-focused session – corners, drops, and line choice!          | Downhill      | Trail Snacks & Switchbacks | t         | {}
+(20 rows)
+

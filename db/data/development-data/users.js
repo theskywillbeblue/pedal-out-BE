@@ -4,7 +4,7 @@ module.exports = [
     username: "jwilson_rider42795",
     avatar_img:
       "https://images.unsplash.com/photo-1541625602330-2277a4c46182?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Avid mountain biker with 10+ years experience on technical trails. Always looking for riding buddies for weekend trips to the Lake District. Specialized Stumpjumper rider who loves downhill and enduro tracks. Hoping to meet fellow riders for regular group rides!",
     created_at: "2025-01-15T09:17:23Z",
     location: "Edinburgh",
@@ -15,7 +15,7 @@ module.exports = [
     username: "n0ah_ahm3d_mtb",
     avatar_img:
       "https://images.unsplash.com/photo-1554201920-c8efd9553c4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Trail enthusiast and weekend warrior. Recently got into mountain biking and looking to improve my skills. Currently riding a Nukeproof Scout hardtail but saving for a full-suspension rig. Would love to join group rides and learn from more experienced riders!",
     created_at: "2025-02-11T15:47:36Z",
     location: "Bristol",
@@ -26,7 +26,7 @@ module.exports = [
     username: "will_clarke_2025",
     avatar_img:
       "https://images.unsplash.com/photo-1505705694340-019e1e335916?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Downhill specialist with a passion for bike park days. Regular at BikePark Wales and Flyup 417. Riding a Santa Cruz Nomad and always looking for people to share the shuttle costs! Happy to help beginners learn the ropes too.",
     created_at: "2025-02-04T08:19:42Z",
     location: "Leeds",
@@ -37,7 +37,7 @@ module.exports = [
     username: "sophiaP_2025xyzq",
     avatar_img:
       "https://images.unsplash.com/photo-1524143986875-3b098d78b363?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "",
     created_at: "2025-01-07T21:05:18Z",
     location: "Birmingham",
@@ -48,7 +48,7 @@ module.exports = [
     username: "ethan_m0rr1s_uk",
     avatar_img:
       "https://images.unsplash.com/photo-1618762044398-ec1e2048ba77?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "XC racer looking for training partners in the Liverpool area. Competed in local races for the past 5 years and just upgraded to a Trek Supercaliber. Also enjoy occasional trail center days at Llandegla and Coed y Brenin. Let's hit the trails!",
     created_at: "2025-01-22T19:41:07Z",
     location: "Liverpool",
@@ -59,7 +59,7 @@ module.exports = [
     username: "alex_davies_2025",
     avatar_img:
       "https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Casual rider who loves exploring forest trails and taking in the views. More about the journey than the speed! Recently discovered the joy of bikepacking and looking for companions for multi-day adventures across the South Downs Way.",
     created_at: "2025-01-11T13:56:28Z",
     location: "Southampton",
@@ -70,7 +70,7 @@ module.exports = [
     username: "charlotteS_7531",
     avatar_img:
       "https://images.unsplash.com/photo-1598881034666-8de527ed9bc2?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Former road cyclist who's fallen in love with dirt! Specialized Epic rider who enjoys technical climbs and flowing descents. Looking for regular riding buddies around Cardiff area, particularly Cwmcarn and Afan Forest. Coffee stops are mandatory!",
     created_at: "2025-02-19T10:12:33Z",
     location: "Cardiff",
@@ -81,7 +81,7 @@ module.exports = [
     username: "d4n_w4lk3r_c0d3",
     avatar_img:
       "https://images.unsplash.com/photo-1623610249830-001d1b60ba66?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "",
     created_at: "2025-02-28T07:23:59Z",
     location: "Oxford",
@@ -92,7 +92,7 @@ module.exports = [
     username: "emmaThomp5on9876",
     avatar_img:
       "https://images.unsplash.com/photo-1526787341486-2659f2713016?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "",
     created_at: "2025-01-29T11:23:54Z",
     location: "Glasgow",
@@ -103,7 +103,7 @@ module.exports = [
     username: "j_taylor_trails",
     avatar_img:
       "https://images.unsplash.com/photo-1546435770-a3e426bf472b?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Trail builder by profession, rider by passion! Working with local MTB organizations to develop sustainable trails around Brighton. Canyon Spectral rider who loves jumps and drops. Always happy to show visitors the best local spots!",
     created_at: "2025-03-22T12:45:37Z",
     location: "Brighton",
@@ -114,7 +114,7 @@ module.exports = [
     username: "mike_reynolds_mtb",
     avatar_img:
       "https://images.unsplash.com/photo-1553502751-9c623d9c834c?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Dad of two who's rediscovered biking in my 40s. Working on my skills every weekend at local trails. Currently riding a Marin hardtail but eyeing up that new Ibis Ripmo! Looking for other dad-riders for early morning sessions before family duties.",
     created_at: "2025-01-31T08:14:22Z",
     location: "Reading",
@@ -125,7 +125,7 @@ module.exports = [
     username: "tomG_enduro_25",
     avatar_img:
       "https://images.unsplash.com/photo-1571074635691-b9d85053a3e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Enduro racer competing in regional series around the UK. Always hunting for the gnarliest descents but don't mind earning my turns. Yeti SB150 rider who's passionate about helping grow the MTB community in my area.",
     created_at: "2025-02-17T16:35:41Z",
     location: "Exeter",
@@ -136,7 +136,7 @@ module.exports = [
     username: "amelia_hughes97",
     avatar_img:
       "https://images.unsplash.com/photo-1573497019236-61f684d360ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "",
     created_at: "2025-01-19T17:08:42Z",
     location: "Nottingham",
@@ -147,7 +147,7 @@ module.exports = [
     username: "rob_j_mtb_rider",
     avatar_img:
       "https://images.unsplash.com/photo-1544983051-ca6a15819dfb?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Bike mechanic and passionate trail rider. Love technical terrain and north shore style features. Currently riding a Commencal Meta AM but have a quiver of bikes for different styles. Happy to offer maintenance tips and trail recommendations!",
     created_at: "2025-03-09T11:27:39Z",
     location: "Sheffield",
@@ -158,7 +158,7 @@ module.exports = [
     username: "avaR1chards0n_uk",
     avatar_img:
       "https://images.unsplash.com/photo-1605027990362-439716c80fbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Mountain bike instructor and guide. Specialized in women's skills clinics and beginner workshops. Always looking to connect with other female riders in the Belfast area! Let's grow the women's MTB community together.",
     created_at: "2025-02-14T14:21:06Z",
     location: "Belfast",
@@ -169,7 +169,7 @@ module.exports = [
     username: "sam_bennett_mtb",
     avatar_img:
       "https://images.unsplash.com/photo-1612886216371-4ef868e15650?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Ex-Downhill racer turned trail enthusiast. Love technical singletrack and natural terrain. Currently riding a Transition Sentinel and looking for people to explore the Surrey Hills with on weekends.",
     created_at: "2025-01-09T16:43:22Z",
     location: "Guildford",
@@ -180,7 +180,7 @@ module.exports = [
     username: "ollie_rides_94",
     avatar_img:
       "https://images.unsplash.com/photo-1559348349-86d1d7d3b98a?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "",
     created_at: "2025-02-22T09:15:37Z",
     location: "Chester",
@@ -191,7 +191,7 @@ module.exports = [
     username: "isla_mclean_mtb",
     avatar_img:
       "https://images.unsplash.com/photo-1631051454124-b6b5c5b3c4e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Scottish trail explorer and adventure seeker. Love discovering new routes in the Highlands and beyond. Currently riding a Juliana Furtado and looking for riding buddies who enjoy post-ride whisky as much as the trails!",
     created_at: "2025-01-23T14:28:51Z",
     location: "Inverness",
@@ -202,7 +202,7 @@ module.exports = [
     username: "geo_stew_enduro",
     avatar_img:
       "https://images.unsplash.com/photo-1625662171891-9a8596e76b4a?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Enduro enthusiast with a passion for jumps and drops. Racing the Southern Enduro series and always looking for new riding spots. Orange Stage 6 rider with too many bikes in the garage according to my partner!",
     created_at: "2025-03-07T11:39:16Z",
     location: "Portsmouth",
@@ -213,7 +213,7 @@ module.exports = [
     username: "freya_j_rides",
     avatar_img:
       "https://images.unsplash.com/photo-1506625501429-b5c9c53a6974?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "",
     created_at: "2025-02-09T08:56:41Z",
     location: "York",
@@ -224,7 +224,7 @@ module.exports = [
     username: "ben_lewis_mtb25",
     avatar_img:
       "https://images.unsplash.com/photo-1574704578617-d902f96aa98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Bike park addict and trail center enthusiast. Regular at Revolution Bike Park and Bike Park Wales. Riding a YT Capra and looking for riding buddies who enjoy airtime as much as I do!",
     created_at: "2025-01-17T17:22:39Z",
     location: "Manchester",
@@ -235,7 +235,7 @@ module.exports = [
     username: "zoe_c_mtb_2025",
     avatar_img:
       "https://images.unsplash.com/photo-1602022683464-36f4e949a4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Cross-country racer with a love for long climbs and fast flowy descents. Working towards my first marathon race this summer. Currently riding a Cannondale Scalpel and looking for training partners in the Peak District area.",
     created_at: "2025-02-26T13:41:09Z",
     location: "Derby",
@@ -246,7 +246,7 @@ module.exports = [
     username: "hmitch_rider",
     avatar_img:
       "https://images.unsplash.com/photo-1592184071566-28b9b88f41e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "",
     created_at: "2025-03-14T09:34:27Z",
     location: "Swansea",
@@ -257,7 +257,7 @@ module.exports = [
     username: "lily_w_trails",
     avatar_img:
       "https://images.unsplash.com/photo-1583225214464-9296029427aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Trail exploring enthusiast with a passion for photography. Love capturing the perfect riding shot as much as nailing the perfect berm. Currently riding a Liv Intrigue and looking for like-minded riders to explore new trails with.",
     created_at: "2025-01-28T16:19:58Z",
     location: "Norwich",
@@ -268,7 +268,7 @@ module.exports = [
     username: "oscar_rides_25",
     avatar_img:
       "https://images.unsplash.com/photo-1508789454646-bef72439f197?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Technical trail enthusiast with a background in trials riding. Love picking my way through rocky sections and improving my balance skills. Currently riding a Cotic SolarisMAX hardtail and looking for riders who enjoy the technical challenge.",
     created_at: "2025-02-03T10:27:33Z",
     location: "Bath",
@@ -279,7 +279,7 @@ module.exports = [
     username: "izzy_p_mtb",
     avatar_img:
       "https://images.unsplash.com/photo-1563911892437-1feda0179e1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "",
     created_at: "2025-03-01T08:44:16Z",
     location: "Cambridge",
@@ -290,7 +290,7 @@ module.exports = [
     username: "leo_rob_trails",
     avatar_img:
       "https://images.unsplash.com/photo-1516246281830-19f982e2d2e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Trail center enthusiast who loves a good blue/red flow trail. More about the enjoyment than the technical challenge. Currently riding a Vitus Mythique and looking for casual riding buddies who enjoy a good pub lunch as much as the ride!",
     created_at: "2025-01-26T12:51:42Z",
     location: "Milton Keynes",
@@ -301,7 +301,7 @@ module.exports = [
     username: "grace_t_rides",
     avatar_img:
       "https://images.unsplash.com/photo-1597784055307-abe26d212342?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Ex-BMX rider turned mountain biker. Love technical features and small jumps. Currently riding a Saracen Ariel and looking for people to hit up the local trails with after work.",
     created_at: "2025-02-18T15:36:29Z",
     location: "Bournemouth",
@@ -312,7 +312,7 @@ module.exports = [
     username: "jack_f0ster_mtb",
     avatar_img:
       "https://images.unsplash.com/photo-1616471915816-935faaa65652?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "",
     created_at: "2025-03-11T17:28:51Z",
     location: "Coventry",
@@ -323,7 +323,7 @@ module.exports = [
     username: "rosie_c0llins",
     avatar_img:
       "https://images.unsplash.com/photo-1611686692109-9d149e542f35?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Mountain bike guide in training with a passion for getting more women into the sport. Currently riding a Bird Aether and organizing weekly women's rides in the Cotswolds area. All abilities welcome!",
     created_at: "2025-01-08T18:39:47Z",
     location: "Cheltenham",
@@ -334,7 +334,7 @@ module.exports = [
     username: "max_c00per_mtb",
     avatar_img:
       "https://images.unsplash.com/photo-1614458929280-28e573e8e792?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Bike park enthusiast and jump line addict. Looking to progress on bigger features this year. Currently riding a Propain Tyee and searching for riding buddies who push each other's skills.",
     created_at: "2025-02-24T10:13:59Z",
     location: "Plymouth",
@@ -345,7 +345,7 @@ module.exports = [
     username: "flo_young_rider",
     avatar_img:
       "https://images.unsplash.com/photo-1598214825383-4b4eda7c6857?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "",
     created_at: "2025-03-19T14:27:38Z",
     location: "Leicester",
@@ -356,7 +356,7 @@ module.exports = [
     username: "ed_baker_mtb25",
     avatar_img:
       "https://images.unsplash.com/photo-1558522195-e1201b090344?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Weekend warrior with a passion for big mountain epics. Planning a trip to the Alps this summer and looking for riders with similar ambitions. Currently riding a Canyon Spectral and building fitness for long days in the saddle.",
     created_at: "2025-01-21T09:38:26Z",
     location: "Eastbourne",
@@ -367,7 +367,7 @@ module.exports = [
     username: "alice_rides_mtb",
     avatar_img:
       "https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Relatively new to mountain biking and looking to build skills and confidence. Currently riding a Trek Remedy and searching for patient riding buddies who don't mind waiting at the bottom of descents!",
     created_at: "2025-02-07T16:42:18Z",
     location: "Aberdeen",
@@ -378,7 +378,7 @@ module.exports = [
     username: "theo_ward_trails",
     avatar_img:
       "https://images.unsplash.com/photo-1622559924472-2c2eb5ed2d68?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "",
     created_at: "2025-03-04T13:19:51Z",
     location: "Preston",
@@ -389,7 +389,7 @@ module.exports = [
     username: "maisie_j_rides",
     avatar_img:
       "https://images.unsplash.com/photo-1554075946-fc2a494e91a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Trail center enthusiast with a love for flowing singletrack. Regular at Whinlatter and Grizedale forests. Currently riding a Specialized Stumpjumper and looking for weekend riding buddies in the Lake District area.",
     created_at: "2025-01-14T11:32:45Z",
     location: "Carlisle",
@@ -400,7 +400,7 @@ module.exports = [
     username: "pat_h0ward_mtb",
     avatar_img:
       "https://images.unsplash.com/photo-1612886216372-f228c19bf0c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "Mountain bike and bikepacking enthusiast looking for multi-day adventure companions. Currently riding a Salsa Horsethief and planning a Coast to Coast trip for summer 2025. Let's explore together!",
     created_at: "2025-02-13T18:23:57Z",
     location: "Durham",
@@ -411,7 +411,7 @@ module.exports = [
     username: "daisy_p_trails",
     avatar_img:
       "https://images.unsplash.com/photo-1511882617617-6a8cd07ba875?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80",
-    public: true,
+    is_public: true,
     bio: "",
     created_at: "2025-03-26T09:47:29Z",
     location: "Swindon",

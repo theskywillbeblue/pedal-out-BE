@@ -225,7 +225,7 @@ module.exports = [
     ride_id: 12,
     body: "Might bring the drone for some trail shots 🎥",
     created_at: "2025-02-15T13:01:47",
-    author: "jacob.taylor.trails"
+    author: "j_taylor_trails"
   },
   {
     ride_id: 1,
@@ -297,7 +297,7 @@ module.exports = [
     ride_id: 13,
     body: "Solid loop. Good mix of chill and challenge!",
     created_at: "2025-03-14T16:47:53",
-    author: "jacob.taylor.trails"
+    author: "j_taylor_trails"
   },
   {
     ride_id: 5,
