@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS pedal_out;
+CREATE DATABASE pedal_out;
+
+DROP DATABASE IF EXISTS pedal_out_test;
+CREATE DATABASE pedal_out_test;
