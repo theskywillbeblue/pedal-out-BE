@@ -1,0 +1,37 @@
+{
+  "name": "pedal-out-be",
+  "version": "1.0.0",
+  "description": "pedal-out-be",
+  "main": "listen.js",
+  "scripts": {
+    "setup-dbs": "psql -f ./db/setup-dbs.sql",
+    "seed-dev": "node ./db/seeds/run-seed.js",
+    "test": "jest",
+    "start": "node listen.js",
+    "test-seed": "jest seed.test.js",
+    "dev": "nodemon listen.js",
+    "seed-prod": "NODE_ENV=production npm run seed-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theskywillbeblue/pedal-out-BE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theskywillbeblue/pedal-out-BE/issues"
+  },
+  "homepage": "https://github.com/theskywillbeblue/pedal-out-BE/blob/main/README.md",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "pg": "^8.14.1",
+    "pg-format": "^1.0.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.1.0"
+  }
+}
