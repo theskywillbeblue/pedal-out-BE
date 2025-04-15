@@ -3,6 +3,7 @@ const {
   fetchRideById,
   createNewRide,
   removeRideById,
+  updateRideById,
 } = require("../models/rides.models.js");
 
 exports.getRides = async (req, res, next) => {
@@ -60,7 +61,17 @@ exports.deleteRideById = async (req, res, next) => {
     await removeRideById(ride_id);
     res.status(204).send();
   } catch (err) {
-    console.log(err);
+    next(err);
+  }
+};
+
+exports.patchRideById = async (req, res, next) => {
+  const { ride_id } = req.params;
+  const { is_public, participants } = req.body;
+  try {
+    const ride = await updateRideById(ride_id, is_public, participants);
+    res.status(200).send({ ride });
+  } catch (err) {
     next(err);
   }
 };

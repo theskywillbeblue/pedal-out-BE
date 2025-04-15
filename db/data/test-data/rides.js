@@ -10,7 +10,7 @@ module.exports = [
     discipline: "Downhill",
     title: "Shred Day at BPW – Jumps, Berms & Gnar!",
     is_public: true,
-    participants: {},
+    participants: '{"will_clarke_2025"}',
   },
   {
     author: "alex_davies_2025",
@@ -23,7 +23,7 @@ module.exports = [
     discipline: "Casual",
     title: "Sunday Cruise on the Downs",
     is_public: true,
-    participants: {},
+    participants: '{"alex_davies_2025"}',
   },
   {
     author: "jwilson_rider42795",
@@ -36,7 +36,7 @@ module.exports = [
     discipline: "Enduro",
     title: "Lake District Tech Loop – Let’s Get Rowdy!",
     is_public: true,
-    participants: {},
+    participants: '{"jwilson_rider42795"}',
   },
   {
     author: "charlotteS_7531",
@@ -49,7 +49,7 @@ module.exports = [
     discipline: "Cross Country",
     title: "XC & Espresso – Cwmcarn Edition",
     is_public: true,
-    participants: {},
+    participants: '{"charlotteS_7531"}',
   },
   {
     author: "tomG_enduro_25",
@@ -62,6 +62,6 @@ module.exports = [
     discipline: "Enduro",
     title: "Afternoon Tech at Haldon – Flow Meets Focus",
     is_public: true,
-    participants: {},
+    participants: '{"tomG_enduro_25"}',
   },
 ];

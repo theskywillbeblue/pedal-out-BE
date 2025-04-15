@@ -1,5 +1,5 @@
 const ridesRouter = require("express").Router();
-const { getRides, getRideById, postNewRide, deleteRideById } = require("../controllers/rides.controllers");
+const { getRides, getRideById, postNewRide, deleteRideById, patchRideById } = require("../controllers/rides.controllers");
 
 
 ridesRouter
@@ -11,6 +11,7 @@ ridesRouter
 .route("/:ride_id")
 .get(getRideById)
 .delete(deleteRideById)
+.patch(patchRideById)
 
 
 module.exports = ridesRouter;

@@ -43,7 +43,7 @@ describe("RIDES", () => {
               discipline: "Downhill",
               title: "Shred Day at BPW – Jumps, Berms & Gnar!",
               is_public: true,
-              participants: {},
+              participants: ["will_clarke_2025"],
             })
           );
         });
@@ -78,7 +78,7 @@ describe("RIDES", () => {
           discipline: "Downhill",
           title: "A great ride",
           is_public: true,
-          participants: {},
+          participants: '{"will_clarke_2025"}',
         })
         .expect(201)
         .then(({ body }) => {
@@ -94,7 +94,7 @@ describe("RIDES", () => {
               discipline: "Downhill",
               title: "A great ride",
               is_public: true,
-              participants: {},
+              participants: ["will_clarke_2025"],
             })
           );
         });
@@ -111,7 +111,7 @@ describe("RIDES", () => {
           discipline: "Downhill",
           title: "A great ride",
           is_public: true,
-          participant: {},
+          participant: '{"will_clarke_2025"}',
         })
         .expect(400)
         .then(({ body }) => {
@@ -130,7 +130,7 @@ describe("RIDES", () => {
           discipline: "Downhill",
           title: "A great ride",
           is_public: true,
-          participants: {},
+          participants: '{"will_clarke_2025"}',
         })
         .expect(400)
         .then(({ body }) => {
@@ -149,7 +149,26 @@ describe("RIDES", () => {
           discipline: "Rugby",
           title: "A great ride",
           is_public: true,
-          participants: {},
+          participants: '{"will_clarke_2025"}',
+        })
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("400: Responds with an error if the inserted object has no participants", () => {
+      return request(app)
+        .post("/api/rides")
+        .send({
+          author: "will_clarke_2025",
+          ride_location: { lat: 60, lng: -5 },
+          ride_date: "2025-05-24",
+          ride_time: "06:30",
+          description: "A really great ride.",
+          discipline: "Downhill",
+          title: "A great ride",
+          is_public: true,
+          participants: "{}",
         })
         .expect(400)
         .then(({ body }) => {
@@ -177,6 +196,104 @@ describe("RIDES", () => {
     test("400: Responds with an error if given an invalid ride id", () => {
       return request(app)
         .delete("/api/rides/not_an_id")
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+  });
+  describe("PATCH /api/rides/:ride_id", () => {
+    test("200: Responds with the updated ride object if the ride is changed from public to private", () => {
+      return request(app)
+        .patch("/api/rides/1")
+        .send({
+          is_public: false,
+        })
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.ride).toEqual(
+            expect.objectContaining({
+              ride_id: 1,
+              author: "will_clarke_2025",
+              ride_location: { lat: 51.8197, lng: -3.4063 }, // BikePark Wales
+              created_at: "2025-03-03T13:22:49.000Z",
+              ride_date: "2025-04-19T23:00:00.000Z",
+              ride_time: "10:30:00",
+              description:
+                "Gonna hit some jumps and tech lines at BPW. Bring pads and let’s send it!",
+              discipline: "Downhill",
+              title: "Shred Day at BPW – Jumps, Berms & Gnar!",
+              is_public: false,
+              participants: ["will_clarke_2025"],
+            })
+          );
+        });
+    });
+    test("200: Responds with the updated ride object when a participant is added", () => {
+      return request(app)
+        .patch("/api/rides/1")
+        .send({
+          participants: "alex_davies_2025",
+        })
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.ride).toEqual(
+            expect.objectContaining({
+              ride_id: 1,
+              author: "will_clarke_2025",
+              ride_location: { lat: 51.8197, lng: -3.4063 }, // BikePark Wales
+              created_at: "2025-03-03T13:22:49.000Z",
+              ride_date: "2025-04-19T23:00:00.000Z",
+              ride_time: "10:30:00",
+              description:
+                "Gonna hit some jumps and tech lines at BPW. Bring pads and let’s send it!",
+              discipline: "Downhill",
+              title: "Shred Day at BPW – Jumps, Berms & Gnar!",
+              is_public: true,
+              participants: ["will_clarke_2025", "alex_davies_2025"],
+            })
+          );
+        });
+    });
+    test("404: Responds with an error if the ride does not exist", () => {
+      return request(app)
+        .patch("/api/rides/99999")
+        .send({
+          is_public: false,
+        })
+        .expect(404)
+        .then(({ body }) => {
+          expect(body.msg).toBe("ride not found");
+        });
+    });
+    test("400: Responds with an error if the ride id is invalid", () => {
+      return request(app)
+        .patch("/api/rides/not_an_id")
+        .send({
+          is_public: false,
+        })
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("400: Responds with an error if the request object contains invalid keys", () => {
+      return request(app)
+        .patch("/api/rides/1")
+        .send({
+          isPublic: false,
+        })
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("400: Responds with an error if the request object contains invalid values", () => {
+      return request(app)
+        .patch("/api/rides/1")
+        .send({
+          is_public: 6,
+        })
         .expect(400)
         .then(({ body }) => {
           expect(body.msg).toBe("Invalid input.");
