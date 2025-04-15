@@ -1,15 +1,16 @@
 const ridesRouter = require("express").Router();
-const { getRides, getRideById } = require("../controllers/rides.controllers");
+const { getRides, getRideById, postNewRide, deleteRideById } = require("../controllers/rides.controllers");
 
 
 ridesRouter
 .route("/")
 .get(getRides)
-// .post(postRide)
+.post(postNewRide)
 
 ridesRouter
 .route("/:ride_id")
 .get(getRideById)
+.delete(deleteRideById)
 
 
 module.exports = ridesRouter;
