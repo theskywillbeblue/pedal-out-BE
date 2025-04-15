@@ -1,44 +1,35 @@
 const express = require('express');
 const app = express();
-app.use(express.json());
 const cors = require('cors');
 const {
-	handleCustomErorrs,
+	handleCustomErrors,
 	handlePsqlErrors,
 	handleServerErrors,
 } = require('../controllers/errors.controllers');
-
-app.use(express.json());
-
-app.use(handleCustomErorrs);
-
-app.use(handlePsqlErrors);
-
-app.use(handleServerErrors);
-
-app.all('*', (req, res) => {
-	res.status(404).send({ msg: 'Path not found.' });
-});
-
-// routers
-
+const apiRouter = require('./api-router');
 app.use(cors());
 
-const apiRouter = require('./api-router');
-const ridesRouter = require('./routes/rides-router');
-const commentsRouter = require('./routes/comments-router');
-const usersRouter = require('./routes/users-router');
+app.use(express.json());
 
 // endpoints
 
 app.use('/api', apiRouter);
 
-app.use('/api/rides', ridesRouter);
 
-app.use('/api/comments', commentsRouter);
-
-app.use('/api/users', usersRouter);
 
 // error handling
+
+
+app.all(/(.*)/, (req, res) => {
+	res.status(404).send({ msg: 'Path not found.' });
+});
+
+app.use(handleCustomErrors);
+
+app.use(handlePsqlErrors);
+
+app.use(handleServerErrors);
+
+
 
 module.exports = app;

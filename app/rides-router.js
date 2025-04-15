@@ -1,5 +1,5 @@
 const ridesRouter = require("express").Router();
-const { getRides } = require("../controllers/rides-controller.js");
+const { getRides } = require("../controllers/rides.controllers");
 
 
 ridesRouter

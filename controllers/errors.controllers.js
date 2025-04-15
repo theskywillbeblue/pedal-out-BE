@@ -1,4 +1,4 @@
-exports.handleCustomErorrs = (err, req, res, next) => {
+exports.handleCustomErrors = (err, req, res, next) => {
     if(err.status) {
         res.status(err.status).send({ msg: err.msg })
     } else {
@@ -15,5 +15,5 @@ exports.handlePsqlErrors = (err, req, res, next) => {
 }
 
 exports.handleServerErrors = (err, req, res, next) => {
-    res.stauts(400).send({ msg: "Server error."});
+    res.status(400).send({ msg: "Server error."});
 }
