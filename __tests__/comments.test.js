@@ -51,7 +51,7 @@ describe("PATCH: /api/comments/:comment_id", () => {
             const comment = body.comment;
             expect(comment.comment_id).toBe(2);
             expect(comment.ride_id).toBe(1);
-            expect(comment.created_at).toBe("2025-02-02T14:27:35");
+            expect(comment.created_at).toBe("2025-02-02T14:27:35.000Z");
             expect(comment.author).toBe("jwilson_rider42795");
             expect(comment.body).toBe("Great route – smooth climbs and fast descents!");
         })

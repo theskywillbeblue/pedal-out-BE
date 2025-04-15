@@ -1,17 +1,17 @@
 const commentsRouter = require("express").Router();
 
-const { getComments } = require("../controllers/comments.controllers");
+const { getComments, deleteCommentById, patchCommentById } = require("../controllers/comments.controllers");
 
 
-commentsRouter
-.route("/")
+// commentsRouter
+// .route("/")
 // .get(getComments)
 // .post(postComment)
 
 
 commentsRouter
 .route("/:comment_id")
-.delete()
-.patch()
+.delete(deleteCommentById)
+.patch(patchCommentById)
 
 module.exports = commentsRouter;
