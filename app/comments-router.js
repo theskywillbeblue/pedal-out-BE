@@ -1,10 +1,10 @@
 const commentsRouter = require("express").Router();
-const { getComments } = require("../controllers/comments-controller.js");
+const { getComments } = require("../controllers/comments.controllers");
 
 
 commentsRouter
 .route("/")
-.get(getComments)
+// .get(getComments)
 // .post(postComment)
 
 
