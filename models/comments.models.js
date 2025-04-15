@@ -12,7 +12,10 @@ exports.removeCommentById = (comment_id) => {
         })
 }
 
-exports.updateCommentById = (comment_id, body) => {
+exports.updateCommentById = (body, comment_id) => {
+    if(!comment_id) {
+        return Promise.reject({ status: 404, msg: 'Comment not found.'})
+    }
     return db.query(
         `UPDATE comments
         SET body = $1

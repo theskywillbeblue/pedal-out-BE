@@ -14,8 +14,8 @@ exports.deleteCommentById = (req, res, next) => {
 exports.patchCommentById = (req, res, next) => {
     const { comment_id } = req.params;
     const { body } = req.body;
-    updateCommentById(comment_id, body)
-    .then(([_, comment]) => {
+    updateCommentById(body, Number(comment_id))
+    .then((comment) => {
         res.status(200).send({comment})
     })
     .catch((err) => {
