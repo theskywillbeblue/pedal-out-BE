@@ -1,9 +1,31 @@
 const format = require("pg-format");
 const db = require("../../db/connection.js");
-const { checkExists } = require("../../db/seeds/utils.js");
+const {
+  checkExists,
+  capitaliseFirstLetter,
+} = require("../../db/seeds/utils.js");
 
-exports.fetchRides = async () => {
-  const { rows } = await db.query(`SELECT * FROM rides;`);
+exports.fetchRides = async (
+  sort_by = "ride_date",
+  order = "ASC",
+  discipline
+) => {
+  const allowedValues = ["ride_date", "ride_time", "created_at"];
+  if (!allowedValues.includes(sort_by) || (order.toUpperCase() !== "ASC" && order.toUpperCase() !== "DESC")) {
+    return Promise.reject({ status: 400, msg: "Invalid input." });
+  }
+  let queryString = `SELECT * FROM rides`;
+  let dollarSign = 1;
+  const queries = [];
+  if (discipline) {
+    queryString += ` WHERE discipline = $${dollarSign}`;
+    dollarSign++;
+    queries.push(capitaliseFirstLetter(discipline));
+  }
+  queryString += ` ORDER BY ${sort_by} ${
+    order.toUpperCase() === "ASC" ? "ASC" : "DESC"
+  }`;
+  const { rows } = await db.query(queryString, queries);
   return rows;
 };
 

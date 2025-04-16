@@ -9,3 +9,9 @@ exports.checkExists = (table, column, value) => {
     }
   });
 };
+
+exports.capitaliseFirstLetter = (str) => {
+  const firstLetter = str[0];
+  const otherLetters = str.toLowerCase().slice(1);
+  return firstLetter.toUpperCase() + otherLetters;
+};
