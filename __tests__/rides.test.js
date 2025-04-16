@@ -314,7 +314,7 @@ describe("RIDES", () => {
         .patch("/api/rides/1")
         .send({
           isPublic: false,
-          descrptn: "Test."
+          descrptn: "Test.",
         })
         .expect(400)
         .then(({ body }) => {
@@ -327,6 +327,42 @@ describe("RIDES", () => {
         .send({
           is_public: 6,
         })
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+  });
+  describe("GET /api/rides/:ride_id/comments", () => {
+    test("200: responds with an array of all comments for the ride with a given id", () => {
+      return request(app)
+        .get("/api/rides/1/comments")
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.comments).toBeInstanceOf(Array);
+          expect(body.comments.length).toBe(3);
+        });
+    });
+    test("200: responds with an empty array if the ride has no comments", () => {
+      return request(app)
+        .get("/api/rides/4/comments")
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.comments).toBeInstanceOf(Array);
+          expect(body.comments.length).toBe(0);
+        });
+    });
+    test("404: responds with an error if there is no ride with a matching id", () => {
+      return request(app)
+        .get("/api/rides/999999/comments")
+        .expect(404)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Resource not found");
+        });
+    });
+    test("400: responds with an error if the ride id is invalid", () => {
+      return request(app)
+        .get("/api/rides/not_an_id/comments")
         .expect(400)
         .then(({ body }) => {
           expect(body.msg).toBe("Invalid input.");

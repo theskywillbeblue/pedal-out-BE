@@ -4,6 +4,7 @@ const {
   createNewRide,
   removeRideById,
   updateRideById,
+  fetchCommentsByRideId,
 } = require("../models/rides.models.js");
 
 exports.getRides = async (req, res, next) => {
@@ -88,6 +89,16 @@ exports.patchRideById = async (req, res, next) => {
       title
     );
     res.status(200).send({ ride });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.getCommentsByRideId = async (req, res, next) => {
+  const { ride_id } = req.params;
+  try {
+    const comments = await fetchCommentsByRideId(ride_id);
+    res.status(200).send({ comments });
   } catch (err) {
     next(err);
   }

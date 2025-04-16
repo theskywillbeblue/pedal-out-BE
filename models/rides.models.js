@@ -1,5 +1,6 @@
 const format = require("pg-format");
 const db = require("../db/connection.js");
+const { checkExists } = require("../db/seeds/utils.js");
 
 exports.fetchRides = async () => {
   const { rows } = await db.query(`SELECT * FROM rides;`);
@@ -150,4 +151,15 @@ exports.updateRideById = async (
     return Promise.reject({ status: 404, msg: "ride not found" });
   }
   return rows[0];
+};
+
+exports.fetchCommentsByRideId = (ride_id) => {
+  const promises = [];
+  promises.push(checkExists("rides", "ride_id", ride_id));
+  promises.unshift(
+    db.query(`SELECT * FROM comments WHERE ride_id = $1`, [ride_id])
+  );
+  return Promise.all(promises).then(([{ rows }]) => {
+    return rows;
+  });
 };
