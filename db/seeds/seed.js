@@ -71,7 +71,8 @@ function createRides() {
         discipline discipline_type NOT NULL,
         title VARCHAR(100) NOT NULL,
         is_public BOOLEAN DEFAULT true,
-        participants JSONB 
+        participants VARCHAR(20)[] NOT NULL,
+        CHECK (array_length(participants, 1) IS NOT NULL)
         )`);
 }
 

@@ -9,7 +9,7 @@ module.exports = [
         discipline: "Mountain",
         title: "Berms & Brews",
         is_public: true,
-        participants: {}
+        participants: '{"j_taylor_trails"}'
     },
     {
         author: "sophiaP_2025xyzq",
@@ -21,7 +21,7 @@ module.exports = [
         discipline: "Cross Country",
         title: "Trail Tour",
         is_public: true,
-        participants: {}
+        participants: '{"sophiaP_2025xyzq"}'
     },
     {
         author: "amelia_hughes97",
@@ -33,7 +33,7 @@ module.exports = [
         discipline: "Casual",
         title: "Scenic Spin",
         is_public: true,
-        participants: {}
+        participants: '{"amelia_hughes97"}'
     },
     {
         author: "avaR1chards0n_uk",
@@ -45,7 +45,7 @@ module.exports = [
         discipline: "Enduro",
         title: "Tech Loop and Chill",
         is_public: true,
-        participants: {}
+        participants: '{"avaR1chards0n_uk"}'
     },
     {
         author: "charlotteS_7531",
@@ -57,7 +57,7 @@ module.exports = [
         discipline: "Gravel",
         title: "Chilled Out Climb",
         is_public: true,
-        participants: {}
+        participants: '{"charlotteS_7531"}'
     },
     {
         author: "ethan_m0rr1s_uk",
@@ -69,7 +69,7 @@ module.exports = [
         discipline: "Cross Country",
         title: "Trail Snacks & Switchbacks",
         is_public: true,
-        participants: {}
+        participants: '{"ethan_m0rr1s_uk"}'
     },
     {
         author: "will_clarke_2025",
@@ -81,7 +81,7 @@ module.exports = [
         discipline: "Park",
         title: "Bikepark Bash",
         is_public: true,
-        participants: {}
+        participants: '{"will_clarke_2025"}'
     },
     {
         author: "mike_reynolds_mtb",
@@ -93,7 +93,7 @@ module.exports = [
         discipline: "Casual",
         title: "Early Bird Loam Hunt",
         is_public: true,
-        participants: {}
+        participants: '{"mike_reynolds_mtb"}'
     },
     {
         author: "emmaThomp5on9876",
@@ -105,7 +105,7 @@ module.exports = [
         discipline: "Mountain",
         title: "Sunday Spinners",
         is_public: true,
-        participants: {}
+        participants: '{"emmaThomp5on9876"}'
     },
     {
         author: "jwilson_rider42795",
@@ -117,7 +117,7 @@ module.exports = [
         discipline: "Cross Country",
         title: "Pedal Party",
         is_public: true,
-        participants: {}
+        participants: '{"jwilson_rider42795"}'
     },
     {
         author: "alex_davies_2025",
@@ -129,7 +129,7 @@ module.exports = [
         discipline: "Downhill",
         title: "Gravity Day Out",
         is_public: true,
-        participants: {}
+        participants: '{"alex_davies_2025"}'
     },
     {
         author: "d4n_w4lk3r_c0d3",
@@ -141,7 +141,7 @@ module.exports = [
         discipline: "Park",
         title: "Trail Shred Session",
         is_public: true,
-        participants: {}
+        participants: '{"d4n_w4lk3r_c0d3"}'
     },
     {
         author: "tomG_enduro_25",
@@ -153,7 +153,7 @@ module.exports = [
         discipline: "Enduro",
         title: "Downhill Dash",
         is_public: true,
-        participants: {}
+        participants: '{"tomG_enduro_25"}'
     },
     {
         author: "amelia_hughes97",
@@ -165,7 +165,7 @@ module.exports = [
         discipline: "Mountain",
         title: "Weekend Sendfest",
         is_public: true,
-        participants: {}
+        participants: '{"amelia_hughes97"}'
     },
     {
         author: "n0ah_ahm3d_mtb",
@@ -177,7 +177,7 @@ module.exports = [
         discipline: "Cross Country",
         title: "Post-Work Flow Jam",
         is_public: true,
-        participants: {}
+        participants: '{"n0ah_ahm3d_mtb"}'
     },
     {
         author: "rob_j_mtb_rider",
@@ -189,7 +189,7 @@ module.exports = [
         discipline: "Gravel",
         title: "Trail Tour",
         is_public: true,
-        participants: {}
+        participants: '{"rob_j_mtb_rider"}'
     },
     {
         author: "avaR1chards0n_uk",
@@ -201,7 +201,7 @@ module.exports = [
         discipline: "Casual",
         title: "Coffee & Cranks",
         is_public: true,
-        participants: {}
+        participants: '{"avaR1chards0n_uk"}'
     },
     {
         author: "charlotteS_7531",
@@ -213,7 +213,7 @@ module.exports = [
         discipline: "Gravel",
         title: "Muddy Buddy Ride",
         is_public: true,
-        participants: {}
+        participants: '{"charlotteS_7531"}'
     },
     {
         author: "emmaThomp5on9876",
@@ -225,7 +225,7 @@ module.exports = [
         discipline: "Mountain",
         title: "Gnar & Chill",
         is_public: true,
-        participants: {}
+        participants: '{"emmaThomp5on9876"}'
     },
     {
         author: "j_taylor_trails",
@@ -237,6 +237,6 @@ module.exports = [
         discipline: "Downhill",
         title: "Trail Snacks & Switchbacks",
         is_public: true,
-        participants: {}
+        participants: '{"j_taylor_trails"}'
     } 
 ];

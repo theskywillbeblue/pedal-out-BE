@@ -1,6 +1,6 @@
 module.exports = [
     {
-      ride_id: 4,
+      ride_id: 3,
       body: "Looks like a solid ride! Count me in next time :muscle:",
       created_at: "2025-01-11T08:43:22",
       author: "rob_j_mtb_rider"
@@ -48,7 +48,7 @@ module.exports = [
       author: "sophiaP_2025xyzq"
     },
     {
-      ride_id: 4,
+      ride_id: 5,
       body: "How technical is this one? Been working on my skills.",
       created_at: "2025-01-20T15:09:18",
       author: "d4n_w4lk3r_c0d3"
@@ -78,7 +78,7 @@ module.exports = [
       author: "mike_reynolds_mtb"
     },
     {
-      ride_id: 4,
+      ride_id: 2,
       body: "Nothing beats a golden hour ride – I'm there!",
       created_at: "2025-03-04T16:03:11",
       author: "tomG_enduro_25"
