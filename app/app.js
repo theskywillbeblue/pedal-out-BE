@@ -5,6 +5,7 @@ const {
 	handleCustomErrors,
 	handlePsqlErrors,
 	handleServerErrors,
+	handleMongoErrors,
 } = require('../controllers/errors.controllers');
 const apiRouter = require('./api-router');
 
@@ -17,6 +18,8 @@ app.use('/api', apiRouter);
 app.use(handleCustomErrors);
 
 app.use(handlePsqlErrors);
+
+app.use(handleMongoErrors);
 
 app.use(handleServerErrors);
 
