@@ -255,6 +255,38 @@ describe("RIDES", () => {
           );
         });
     });
+    test("200: Responds with the updated ride object if multiple keys are changed", () => {
+      return request(app)
+        .patch("/api/rides/1")
+        .send({
+          is_public: false,
+          ride_date: "2025-04-14",
+          ride_time: "07:30",
+          description:
+            "Gonna hit some jumps and tech lines at BPW. Bring pads and let’s send it.",
+          discipline: "Cross Country",
+          title: "Shred Day at BPW – Jumps, Berms & Gnar",
+        })
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.ride).toEqual(
+            expect.objectContaining({
+              ride_id: 1,
+              author: "will_clarke_2025",
+              ride_location: { lat: 51.8197, lng: -3.4063 }, // BikePark Wales
+              created_at: "2025-03-03T13:22:49.000Z",
+              ride_date: "2025-04-13T23:00:00.000Z",
+              ride_time: "07:30:00",
+              description:
+                "Gonna hit some jumps and tech lines at BPW. Bring pads and let’s send it.",
+              discipline: "Cross Country",
+              title: "Shred Day at BPW – Jumps, Berms & Gnar",
+              is_public: false,
+              participants: ["will_clarke_2025"],
+            })
+          );
+        });
+    });
     test("404: Responds with an error if the ride does not exist", () => {
       return request(app)
         .patch("/api/rides/99999")
@@ -282,6 +314,7 @@ describe("RIDES", () => {
         .patch("/api/rides/1")
         .send({
           isPublic: false,
+          descrptn: "Test."
         })
         .expect(400)
         .then(({ body }) => {

@@ -67,9 +67,26 @@ exports.deleteRideById = async (req, res, next) => {
 
 exports.patchRideById = async (req, res, next) => {
   const { ride_id } = req.params;
-  const { is_public, participants } = req.body;
+  const {
+    is_public,
+    participants,
+    ride_date,
+    ride_time,
+    description,
+    discipline,
+    title,
+  } = req.body;
   try {
-    const ride = await updateRideById(ride_id, is_public, participants);
+    const ride = await updateRideById(
+      ride_id,
+      is_public,
+      participants,
+      ride_date,
+      ride_time,
+      description,
+      discipline,
+      title
+    );
     res.status(200).send({ ride });
   } catch (err) {
     next(err);
