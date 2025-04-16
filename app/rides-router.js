@@ -7,7 +7,7 @@ const {
   patchRideById,
   getCommentsByRideId,
   postCommentByRideId,
-} = require("../controllers/rides.controllers");
+} = require("../controllers/postgres/rides.controllers");
 
 ridesRouter.route("/").get(getRides).post(postNewRide);
 

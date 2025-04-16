@@ -1,6 +1,6 @@
 const format = require("pg-format");
-const db = require("../db/connection.js");
-const { checkExists } = require("../db/seeds/utils.js");
+const db = require("../../db/connection.js");
+const { checkExists } = require("../../db/seeds/utils.js");
 
 exports.fetchRides = async () => {
   const { rows } = await db.query(`SELECT * FROM rides;`);

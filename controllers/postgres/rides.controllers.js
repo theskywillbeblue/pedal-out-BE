@@ -6,7 +6,7 @@ const {
   updateRideById,
   fetchCommentsByRideId,
   createCommentByRideId,
-} = require("../models/rides.models.js");
+} = require("../../models/postgres/rides.models.js");
 
 exports.getRides = async (req, res, next) => {
   try {

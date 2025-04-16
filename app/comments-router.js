@@ -1,6 +1,6 @@
 const commentsRouter = require("express").Router();
 
-const { getComments, deleteCommentById, patchCommentById } = require("../controllers/comments.controllers");
+const { getComments, deleteCommentById, patchCommentById } = require("../controllers/postgres/comments.controllers");
 
 
 // commentsRouter

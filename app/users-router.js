@@ -1,5 +1,5 @@
 const usersRouter = require("express").Router();
-const { getUsers } = require("../controllers/users.controllers");
+const { getUsers } = require("../controllers/postgres/users.controllers");
 
 
 usersRouter
