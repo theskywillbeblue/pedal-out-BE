@@ -20,7 +20,6 @@ describe("checkExists", () => {
   test('Returns an error with a status key of 404 and a message of "Resource not found" when passed a value that does not exist in the given table and column', () => {
     checkExists("rides", "ride_id", 9999999)
       .then((output) => {
-        console.log(output);
         expect(output.status).toBe(404);
         expect(output.msg).toBe("Resource not found");
       })

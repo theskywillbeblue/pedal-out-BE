@@ -163,3 +163,12 @@ exports.fetchCommentsByRideId = (ride_id) => {
     return rows;
   });
 };
+
+exports.createCommentByRideId = async (ride_id, author, created_at, body) => {
+  const { rows } = await db.query(
+    `INSERT INTO comments (ride_id, author, created_at, body)
+    VALUES ($1, $2, $3, $4) RETURNING *`,
+    [ride_id, author, created_at, body]
+  );
+  return rows[0];
+};

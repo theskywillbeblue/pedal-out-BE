@@ -5,6 +5,7 @@ const {
   removeRideById,
   updateRideById,
   fetchCommentsByRideId,
+  createCommentByRideId,
 } = require("../models/rides.models.js");
 
 exports.getRides = async (req, res, next) => {
@@ -99,6 +100,22 @@ exports.getCommentsByRideId = async (req, res, next) => {
   try {
     const comments = await fetchCommentsByRideId(ride_id);
     res.status(200).send({ comments });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.postCommentByRideId = async (req, res, next) => {
+  const { ride_id } = req.params;
+  const { author, created_at, body } = req.body;
+  try {
+    const newComment = await createCommentByRideId(
+      ride_id,
+      author,
+      created_at,
+      body
+    );
+    res.status(201).send({ newComment });
   } catch (err) {
     next(err);
   }

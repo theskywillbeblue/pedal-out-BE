@@ -6,6 +6,7 @@ const {
   deleteRideById,
   patchRideById,
   getCommentsByRideId,
+  postCommentByRideId,
 } = require("../controllers/rides.controllers");
 
 ridesRouter.route("/").get(getRides).post(postNewRide);
@@ -16,6 +17,9 @@ ridesRouter
   .delete(deleteRideById)
   .patch(patchRideById);
 
-ridesRouter.route("/:ride_id/comments").get(getCommentsByRideId);
+ridesRouter
+  .route("/:ride_id/comments")
+  .get(getCommentsByRideId)
+  .post(postCommentByRideId);
 
 module.exports = ridesRouter;

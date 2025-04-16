@@ -369,4 +369,66 @@ describe("RIDES", () => {
         });
     });
   });
+  describe("POST /api/:ride_id/comments", () => {
+    test("201: Responds with newly created comment", () => {
+      return request(app)
+        .post("/api/rides/1/comments")
+        .send({
+          author: "will_clarke_2025",
+          created_at: "2025-03-05T19:14:08",
+          body: "Test.",
+        })
+        .expect(201)
+        .then(({ body }) => {
+          expect(body.newComment).toEqual(
+            expect.objectContaining({
+              comment_id: expect.any(Number),
+              ride_id: 1,
+              author: "will_clarke_2025",
+              created_at: "2025-03-05T19:14:08.000Z",
+              body: "Test.",
+            })
+          );
+        });
+    });
+    test("400: Responds with an error if there is no ride with the matching id", () => {
+      return request(app)
+        .post("/api/rides/99999/comments")
+        .send({
+          author: "will_clarke_2025",
+          created_at: "2025-03-05T19:14:08",
+          body: "Test.",
+        })
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("400: Responds with an error if the request body contains invalid keys", () => {
+      return request(app)
+        .post("/api/rides/1/comments")
+        .send({
+          Arthur: "will_clarke_2025",
+          createdAt: "2025-03-05T19:14:08",
+          o: "Test.",
+        })
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+  });
+  test("400: Responds with an error if the request body contains a nonexistent author", () => {
+    return request(app)
+      .post("/api/rides/1/comments")
+      .send({
+        author: "not_a_user",
+        created_at: "2025-03-05T19:14:08",
+        body: "Test.",
+      })
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toBe("Invalid input.");
+      });
+  });
 });
