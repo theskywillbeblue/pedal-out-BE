@@ -3,6 +3,7 @@ const seed = require("../db/seeds/seed.js");
 const data = require("../db/data/test-data/index.js");
 const db = require("../db/connection.js");
 const app = require("../app/app.js");
+const rides = require("../db/data/test-data/rides.js");
 
 beforeEach(() => {
   return seed(data);
@@ -21,6 +22,111 @@ describe("RIDES", () => {
         .then(({ body }) => {
           expect(body.rides).toBeInstanceOf(Array);
           expect(body.rides.length).toBe(5);
+        });
+    });
+    test("200: Get all rides of a specified discipline", () => {
+      return request(app)
+        .get("/api/rides?discipline=enduro")
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.rides).toBeInstanceOf(Array);
+          expect(body.rides.length).toBe(2);
+          body.rides.forEach((ride) => {
+            expect(ride.discipline).toBe("Enduro");
+          });
+        });
+    });
+    test("400: Responds with an error if an invalid discipline is provided", () => {
+      return request(app)
+        .get("/api/rides?discipline=not_a_discipline")
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("200: Rides are ordered by date in ascending order by default", () => {
+      return request(app)
+        .get("/api/rides")
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.rides).toBeSortedBy("ride_date", { descending: false });
+        });
+    });
+    test("200: Rides are ordered by the specified column in the specified order", () => {
+      return request(app)
+        .get("/api/rides?sort_by=created_at&order=desc")
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.rides).toBeSortedBy("created_at", { descending: true });
+        });
+    });
+    test("400: Returns an error if sort_by is given an invalid value", () => {
+      return request(app)
+        .get("/api/rides?sort_by=not_a_column&order=desc")
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("400: Returns an error if order is given an invalid value", () => {
+      return request(app)
+        .get("/api/rides?sort_by=created_at&order=invalid")
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("200: Get all rides 10 miles of a specified location by default", () => {
+      return request(app)
+        .get("/api/rides?lat=51.82&long=-3.406")
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.rides).toBeInstanceOf(Array);
+          expect(body.rides.length).toBe(1);
+          expect(body.rides[0].ride_id).toBe(1);
+        });
+    });
+    test("200: Get all rides within a specified radius of a specified location", () => {
+      return request(app)
+        .get("/api/rides?lat=51.82&long=-3.406&radius=20")
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.rides).toBeInstanceOf(Array);
+          expect(body.rides.length).toBe(2);
+        });
+    });
+    test("400: Returns an error if latitude is missing", () => {
+      return request(app)
+        .get("/api/rides?long=-3.406&radius=20")
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("400: Returns an error if latitude is given an invalid value", () => {
+      return request(app)
+        .get("/api/rides?lat=fifty&long=-3.406&radius=20")
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("400: Returns an error if radius is given an invalid value", () => {
+      return request(app)
+        .get("/api/rides?lat=51.82&long=-3.406&radius=twenty")
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("200: Get all rides within a specified radius of a specified location sorted by distance", () => {
+      return request(app)
+        .get("/api/rides?lat=51.82&long=-3.406&radius=20&sort_by=distance")
+        .expect(200)
+        .then(({ body }) => {
+          console.log(body.rides);
+          expect(body.rides).toBeInstanceOf(Array);
+          expect(body.rides.length).toBe(2);
         });
     });
   });
@@ -417,18 +523,18 @@ describe("RIDES", () => {
           expect(body.msg).toBe("Invalid input.");
         });
     });
-  });
-  test("400: Responds with an error if the request body contains a nonexistent author", () => {
-    return request(app)
-      .post("/api/rides/1/comments")
-      .send({
-        author: "not_a_user",
-        created_at: "2025-03-05T19:14:08",
-        body: "Test.",
-      })
-      .expect(400)
-      .then(({ body }) => {
-        expect(body.msg).toBe("Invalid input.");
-      });
+    test("400: Responds with an error if the request body contains a nonexistent author", () => {
+      return request(app)
+        .post("/api/rides/1/comments")
+        .send({
+          author: "not_a_user",
+          created_at: "2025-03-05T19:14:08",
+          body: "Test.",
+        })
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
   });
 });

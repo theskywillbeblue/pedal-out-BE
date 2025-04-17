@@ -13,6 +13,12 @@ exports.checkExists = (table, column, value) => {
   });
 };
 
+exports.capitaliseFirstLetter = (str) => {
+  const firstLetter = str[0];
+  const otherLetters = str.toLowerCase().slice(1);
+  return firstLetter.toUpperCase() + otherLetters;
+};
+
 exports.checkUser = (username) => {
   return supabase
   .from('user_profile')
@@ -33,4 +39,3 @@ exports.checkUser = (username) => {
         return Promise.reject({ status: 400, msg: "Invalid input." });
   });
 };
-

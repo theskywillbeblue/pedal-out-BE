@@ -1,9 +1,51 @@
 const format = require("pg-format");
 const db = require("../../db/connection.js");
-const { checkExists, checkUser } = require("../../db/seeds/utils.js");
+const {
+  checkExists,
+  capitaliseFirstLetter,
+  checkUser
+} = require("../../db/seeds/utils.js");
 
-exports.fetchRides = async () => {
-  const { rows } = await db.query(`SELECT * FROM rides;`);
+exports.fetchRides = async (
+  sort_by = "ride_date",
+  order = "ASC",
+  discipline,
+  lat,
+  long,
+  radius = 10
+) => {
+  const allowedValues = ["ride_date", "ride_time", "created_at", "distance"];
+  if (
+    !allowedValues.includes(sort_by) ||
+    (order.toUpperCase() !== "ASC" && order.toUpperCase() !== "DESC") ||
+    (lat && !long) ||
+    (long && !lat) ||
+    (lat && isNaN(lat)) ||
+    (long && isNaN(long)) ||
+    (radius && isNaN(radius))
+  ) {
+    return Promise.reject({ status: 400, msg: "Invalid input." });
+  }
+  let queryString = `SELECT * FROM rides`;
+  let dollarSign = 1;
+  const queries = [];
+  if (discipline) {
+    queryString += ` WHERE discipline = $${dollarSign}`;
+    dollarSign++;
+    queries.push(capitaliseFirstLetter(discipline));
+  }
+  if (lat && long) {
+    if (dollarSign === 1) {
+      queryString += ` WHERE`;
+    } else {
+      queryString += ` AND`;
+    }
+    queryString += ` calculateDistance(radians(${lat}), radians(${long}), radians((ride_location::jsonb ->> 'lat')::float), radians((ride_location::jsonb ->> 'lng')::float)) <= ${radius}*1.60934`;
+  }
+  queryString += ` ORDER BY ${sort_by !== "distance" ? sort_by : `calculateDistance(radians(${lat}), radians(${long}), radians((ride_location::jsonb ->> 'lat')::float), radians((ride_location::jsonb ->> 'lng')::float))`} ${
+    order.toUpperCase() === "ASC" ? "ASC" : "DESC"
+  }`;
+  const { rows } = await db.query(queryString, queries);
   return rows;
 };
 

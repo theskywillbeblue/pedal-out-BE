@@ -23,6 +23,9 @@ const seed = ({ usersData, ridesData, commentsData }) => {
       return createComments();
     })
     .then(() => {
+      return createDistanceCalculator();
+    })
+    .then(() => {
       return insertRides(ridesData);
     })
     .then(() => {
@@ -69,8 +72,18 @@ function createComments() {
         )`);
 }
 
-function insertRides(data) {
+function createDistanceCalculator() {
+  return db.query(`CREATE OR REPLACE FUNCTION calculateDistance(search_lat FLOAT, search_long FLOAT, target_lat FLOAT, target_long FLOAT)
+    RETURNS FLOAT
+    AS
+    $$
+    BEGIN
+      RETURN acos(sin(search_lat)*sin(target_lat)+cos(search_lat)*cos(target_lat)*cos(target_long-search_long))*6371;
+    END;
+    $$ LANGUAGE plpgsql;`);
+}
 
+function insertRides(data) {
     const formattedRides = data.map((ride) => {
     return [
       ride.author,

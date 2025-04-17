@@ -9,8 +9,16 @@ const {
 } = require("../../models/postgres/rides.models.js");
 
 exports.getRides = async (req, res, next) => {
+  const { sort_by, order, discipline, lat, long, radius } = req.query;
   try {
-    const rows = await fetchRides();
+    const rows = await fetchRides(
+      sort_by,
+      order,
+      discipline,
+      lat,
+      long,
+      radius
+    );
     res.status(200).send({ rides: rows });
   } catch (err) {
     next(err);
