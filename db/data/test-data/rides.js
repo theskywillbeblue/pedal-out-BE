@@ -11,6 +11,8 @@ module.exports = [
     title: "Shred Day at BPW – Jumps, Berms & Gnar!",
     is_public: true,
     participants: '{"will_clarke_2025"}',
+    ride_img_url:
+      "https://d1hxd0sho1wxko.cloudfront.net/production/imager-transforms-cache/general/91598/Caledonian_22_524818acc5c4ddc5dc7f607a478e9c75.jpg",
   },
   {
     author: "alex_davies_2025",
@@ -24,6 +26,8 @@ module.exports = [
     title: "Sunday Cruise on the Downs",
     is_public: true,
     participants: '{"alex_davies_2025"}',
+    ride_img_url:
+      "https://cdn.images.express.co.uk/img/dynamic/25/590x/1939281_1.jpg",
   },
   {
     author: "jwilson_rider42795",
@@ -37,6 +41,8 @@ module.exports = [
     title: "Lake District Tech Loop – Let’s Get Rowdy!",
     is_public: true,
     participants: '{"jwilson_rider42795"}',
+    ride_img_url:
+      "https://files.holidaycottages.co.uk/peakcottages%2Fguides%2F1591618081948-intro.jpg",
   },
   {
     author: "charlotteS_7531",
@@ -50,6 +56,8 @@ module.exports = [
     title: "XC & Espresso – Cwmcarn Edition",
     is_public: true,
     participants: '{"charlotteS_7531"}',
+    ride_img_url:
+      "https://element-active.co.uk/wp-content/uploads/2021/10/Homepage-Image-1-e1635254959426.jpg",
   },
   {
     author: "tomG_enduro_25",
@@ -63,5 +71,7 @@ module.exports = [
     title: "Afternoon Tech at Haldon – Flow Meets Focus",
     is_public: true,
     participants: '{"tomG_enduro_25"}',
+    ride_img_url:
+      "https://surreyhillsbikerental.co.uk/wp-content/uploads/2020/11/190710-new-forest-gravel-59-5-1024x683.jpg",
   },
 ];

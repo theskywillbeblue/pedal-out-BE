@@ -2,7 +2,10 @@ const db = require("../connection.js");
 const format = require("pg-format");
 const { createClient } = require("@supabase/supabase-js");
 
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+);
 
 const seed = ({ usersData, ridesData, commentsData }) => {
   return db
@@ -57,6 +60,7 @@ function createRides() {
         discipline discipline_type NOT NULL,
         title VARCHAR(100) NOT NULL,
         is_public BOOLEAN DEFAULT true,
+        ride_img_url TEXT,
         participants VARCHAR(20)[] NOT NULL,
         CHECK (array_length(participants, 1) IS NOT NULL)
         )`);
@@ -84,7 +88,7 @@ function createDistanceCalculator() {
 }
 
 function insertRides(data) {
-    const formattedRides = data.map((ride) => {
+  const formattedRides = data.map((ride) => {
     return [
       ride.author,
       JSON.stringify(ride.ride_location),
@@ -96,11 +100,12 @@ function insertRides(data) {
       ride.title,
       ride.is_public,
       ride.participants,
+      ride.ride_img_url,
     ];
   });
   const sqlRides = format(
     `INSERT INTO rides
-        (author, ride_location, created_at, ride_date, ride_time, description, discipline, title, is_public, participants)
+        (author, ride_location, created_at, ride_date, ride_time, description, discipline, title, is_public, participants, ride_img_url)
         VALUES %L RETURNING *`,
     formattedRides
   );
