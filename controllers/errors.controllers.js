@@ -17,3 +17,16 @@ exports.handlePsqlErrors = (err, req, res, next) => {
 exports.handleServerErrors = (err, req, res, next) => {
     res.status(500).send({ msg: "Server error."});
 }
+
+exports.handleMongoErrors = (err, req, res, next) => {
+    if(err.name === 'ValidationError') {
+        return res.status(400).send({ msg: err.message })
+    };
+    if(err.name === 'CastError') {
+        return res.status(400).send({ msg: 'Invalid MongoDB ID format' })
+    };
+    if(err.code === 11000) {
+        return res.status(409).send({ msg: 'Duplicate key error' })
+    }
+    next(err);
+}

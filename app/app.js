@@ -5,25 +5,21 @@ const {
 	handleCustomErrors,
 	handlePsqlErrors,
 	handleServerErrors,
+	handleMongoErrors,
 } = require('../controllers/errors.controllers');
 const apiRouter = require('./api-router');
+
 app.use(cors());
 
 app.use(express.json());
 
-// endpoints
-
 app.use('/api', apiRouter);
-
-
-
-// error handling
-
-
 
 app.use(handleCustomErrors);
 
 app.use(handlePsqlErrors);
+
+app.use(handleMongoErrors);
 
 app.use(handleServerErrors);
 

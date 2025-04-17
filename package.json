@@ -24,9 +24,11 @@
   },
   "homepage": "https://github.com/theskywillbeblue/pedal-out-BE/blob/main/README.md",
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "mongodb": "^6.15.0",
     "mongoose": "^8.13.2",
     "pg": "^8.14.1",
     "pg-format": "^1.0.4"
