@@ -22,29 +22,37 @@ exports.postFriendship = (dbName, db, followerUsername, followingUsername) => {
 exports.getAllFollowers = (dbName, db, username) => {
     const envCollection = dbName === 'friends-test' ? 'test-friends-data' : 'dev-friends-data';
 
-    const followingPromise = db.collection(envCollection).find({
-        followerUsername: username
-    }).toArray();
-
-    const followerPromise = db.collection(envCollection).find({
-            followingUsername: username
+    try {
+        console.log('fetching followers and following for:', username)
+        const followingPromise = db.collection(envCollection).find({
+            followerUsername: username
         }).toArray();
 
-    return Promise.all([followingPromise, followerPromise])
-        .then(([following, followers]) => {
-            if(followers.length === 0 && following.length === 0) {
-                return Promise.reject({status: 404, msg: "User has 0 followers and doesn't follow any accounts."})
-            }
-            else {
-                const followedUsers = following.map((followedUser) => {
-                    return followedUser.followingUsername;
+        const followerPromise = db.collection(envCollection).find({
+                followingUsername: username
+            }).toArray();
+
+            return Promise.all([followingPromise, followerPromise])
+                .then(([following, followers]) => {
+                    console.log('Following:', following);
+                    console.log('Followers:', followers);
+                    // if(followers.length === 0 && following.length === 0) {
+                    //     return {'Followers': 0, 'Following': 0};
+                    //     // return [Promise.reject({status: 404, msg: "User has 0 followers and doesn't follow any accounts."}])
+                    // }
+                    const followedUsers = following.map((followedUser) => {
+                        return followedUser.followingUsername;
+                    })
+                    const usersFollowers = followers.map((follower) => {
+                        return follower.followerUsername;
+                    })
+                    return {followedUsers, usersFollowers};
                 })
-                const usersFollowers = followers.map((follower) => {
-                    return follower.followerUsername;
-                })
-                return {followedUsers, usersFollowers};
-            }
-        })
+    } catch (err) {
+        console.error('Error inside getAllFollowers:', err);
+        throw err;
+    }
+
 }
 
 exports.removeIndividualFriendship = (dbName, db, username, userToUnfollow) => {
