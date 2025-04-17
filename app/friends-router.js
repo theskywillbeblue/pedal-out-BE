@@ -6,7 +6,10 @@ const friendsRouter = express.Router();
 friendsRouter
 .route('/:username')
 .post(createFriendship)
-.get(findAllFollowersAndFollowing)
+.get((req, res, next) => {
+    console.log('about to call findAll function');
+    next();
+}, findAllFollowersAndFollowing)
 .delete(deleteIndividualFriendship);
 
 friendsRouter
