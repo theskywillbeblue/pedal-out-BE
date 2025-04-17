@@ -25,7 +25,9 @@ exports.findAllFollowersAndFollowing = (req, res, next) => {
     const dbName = env === 'test' ? 'friends-test' : 'friends-dev';
     const { username } = req.params;
 
-    console.log(`NODE_ENV:, ${env}`);
+    console.log(`find all followers for ${username}`)
+
+    console.log(`NODE_ENV: ${env}`);
     console.log(`Using DB: ${dbName}`);
 
     connectToDB()
