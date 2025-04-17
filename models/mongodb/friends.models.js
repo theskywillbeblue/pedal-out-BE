@@ -19,27 +19,22 @@ exports.postFriendship = (dbName, db, followerUsername, followingUsername) => {
     })
 }
 
-exports.getAllFollowers = (dbName, db, username) => {
-    const envCollection = dbName === 'friends-test' ? 'test-friends-data' : 'dev-friends-data';
-
+exports.getAllFollowers = (collectionName, db, username) => {
     try {
-        console.log('fetching followers and following for:', username)
-        const followingPromise = db.collection(envCollection).find({
+        console.log('fetching followers and following for:', username, 'from collection', collectionName);
+        const followingPromise = db.collection(collectionName).find({
             followerUsername: username
         }).toArray();
 
-        const followerPromise = db.collection(envCollection).find({
+        const followerPromise = db.collection(collectionName).find({
                 followingUsername: username
             }).toArray();
 
             return Promise.all([followingPromise, followerPromise])
                 .then(([following, followers]) => {
-                    console.log('Following:', following);
-                    console.log('Followers:', followers);
-                    // if(followers.length === 0 && following.length === 0) {
-                    //     return {'Followers': 0, 'Following': 0};
-                    //     // return [Promise.reject({status: 404, msg: "User has 0 followers and doesn't follow any accounts."}])
-                    // }
+                    console.log('Found following count:', following.length);
+                    console.log('Found followers count:', followers.length);
+
                     const followedUsers = following.map((followedUser) => {
                         return followedUser.followingUsername;
                     })

@@ -20,11 +20,13 @@ let isConnected = false;
 async function connectToDB() {
     if(!isConnected) {
         try {
+            console.log('Attempting to connect to MongoDB with URI:', 
+                uri.replace(/mongodb\+srv:\/\/([^:]+):([^@]+)@/, 'mongodb+srv://***:***@'));
         await client.connect();
         isConnected = true;
         console.log('Connected to MongoDB.')
     } catch (err) {
-        console.err('Error connecting to MongoDB', err);
+        console.error('Error connecting to MongoDB', err);
         throw err;
     }
 }

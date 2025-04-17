@@ -23,9 +23,14 @@ app.use(handleMongoErrors);
 
 app.use(handleServerErrors);
 
+
 app.all(/(.*)/, (req, res) => {
 	res.status(404).send({ msg: 'Path not found.' });
 });
 
+app.use((err, req, res, next) => {
+	console.error('Global error handler caught:', err);
+	res.status(err.status || 500).send({ msg: err.msg || 'Server error.' });
+  });
 
 module.exports = app;
