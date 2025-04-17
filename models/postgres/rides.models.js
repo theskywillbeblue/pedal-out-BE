@@ -1,6 +1,6 @@
 const format = require("pg-format");
 const db = require("../../db/connection.js");
-const { checkExists } = require("../../db/seeds/utils.js");
+const { checkExists, checkUser } = require("../../db/seeds/utils.js");
 
 exports.fetchRides = async () => {
   const { rows } = await db.query(`SELECT * FROM rides;`);
@@ -17,7 +17,7 @@ exports.fetchRideById = async (ride_id) => {
   return rows[0];
 };
 
-exports.createNewRide = async (
+exports.createNewRide = (
   author,
   ride_location,
   ride_date,
@@ -28,7 +28,9 @@ exports.createNewRide = async (
   is_public,
   participants
 ) => {
-  const { rows } = await db.query(
+  const promises = [];
+  promises.push(checkUser(author));
+  promises.unshift(db.query(
     `INSERT INTO rides (
   author,
   ride_location,
@@ -51,9 +53,12 @@ exports.createNewRide = async (
       title,
       is_public,
       participants,
-    ]
-  );
-  return rows[0];
+    ]))
+  
+    return Promise.all(promises).then(([{ rows }]) => {
+      return rows[0];
+    })
+
 };
 
 exports.removeRideById = async (ride_id) => {
@@ -165,10 +170,13 @@ exports.fetchCommentsByRideId = (ride_id) => {
 };
 
 exports.createCommentByRideId = async (ride_id, author, created_at, body) => {
+  await checkUser(author);
+
   const { rows } = await db.query(
     `INSERT INTO comments (ride_id, author, created_at, body)
-    VALUES ($1, $2, $3, $4) RETURNING *`,
+     VALUES ($1, $2, $3, $4) RETURNING *`,
     [ride_id, author, created_at, body]
   );
+
   return rows[0];
 };
