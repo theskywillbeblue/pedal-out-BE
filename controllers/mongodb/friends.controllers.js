@@ -1,5 +1,5 @@
 const { connectToDB } = require("../../db/mongodb-connection.js");
-const { postFriendship, getAllFollowers,  removeIndividualFriendship, removeAllFriendships } = require("../../models/mongodb/friends.models.js");
+const { postFriendship, getAllFollowers, removeIndividualFriendship, removeAllFriendships } = require("../../models/mongodb/friends.models.js");
 
 exports.createFriendship = (req, res, next) => {
     const env = process.env.NODE_ENV || 'development';
@@ -21,6 +21,7 @@ exports.createFriendship = (req, res, next) => {
 }
 
 exports.findAllFollowersAndFollowing = (req, res, next) => {
+    console.log('request received for:'. req.params.username);
     const env = process.env.NODE_ENV || 'development';
     const dbName = env === 'test' ? 'friends-test' : 'friends-dev';
     const { username } = req.params;
