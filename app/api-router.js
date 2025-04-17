@@ -11,11 +11,6 @@ apiRouter.use('/comments', commentsRouter);
 
 apiRouter.use('/users', usersRouter);
 
-apiRouter.use('/friends', (req, res, next) => {
-    console.log('routing to /friends');
-    next()
-})
-
 apiRouter.use('/friends', friendsRouter);
 
 apiRouter.use('/', getEndpoints);

@@ -20,8 +20,6 @@ let isConnected = false;
 async function connectToDB() {
     if(!isConnected) {
         try {
-            console.log('Attempting to connect to MongoDB with URI:', 
-                uri.replace(/mongodb\+srv:\/\/([^:]+):([^@]+)@/, 'mongodb+srv://***:***@'));
         await client.connect();
         isConnected = true;
         console.log('Connected to MongoDB.')

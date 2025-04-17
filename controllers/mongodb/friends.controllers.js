@@ -21,28 +21,20 @@ exports.createFriendship = (req, res, next) => {
 }
 
 exports.findAllFollowersAndFollowing = (req, res, next) => {
-    console.log('request received for:', req.params.username);
     const env = process.env.NODE_ENV || 'development';
     const dbName = env === 'test' ? 'friends-test' : 'friends-dev';
     const collectionName = env === 'test' ? 'test-friends-data' : 'dev-friends-data';
     const { username } = req.params;
 
-    console.log(`find all followers for ${username}`)
-    console.log(`NODE_ENV: ${env}`);
-    console.log(`Using DB: ${dbName}, Collection: ${collectionName}`);
-
     connectToDB()
         .then((client) => {
             const db = client.db(dbName);
-            console.log('DB connected, about to call getAllFollowers')
             return getAllFollowers(collectionName, db, username)
         })
         .then((result) => {
-            console.log('got result from getAllFollowers', result);
             res.status(200).send(result);
         })
         .catch((err) => {
-            console.log('error in findAllFollowers', err);
             next(err);
         })
 }

@@ -21,7 +21,6 @@ exports.postFriendship = (dbName, db, followerUsername, followingUsername) => {
 
 exports.getAllFollowers = (collectionName, db, username) => {
     try {
-        console.log('fetching followers and following for:', username, 'from collection', collectionName);
         const followingPromise = db.collection(collectionName).find({
             followerUsername: username
         }).toArray();
@@ -32,8 +31,6 @@ exports.getAllFollowers = (collectionName, db, username) => {
 
             return Promise.all([followingPromise, followerPromise])
                 .then(([following, followers]) => {
-                    console.log('Found following count:', following.length);
-                    console.log('Found followers count:', followers.length);
 
                     const followedUsers = following.map((followedUser) => {
                         return followedUser.followingUsername;
