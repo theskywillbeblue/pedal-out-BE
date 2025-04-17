@@ -1,5 +1,8 @@
 const db = require("../connection.js");
 const format = require("pg-format");
+const { createClient } = require("@supabase/supabase-js");
+
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
 
 const seed = ({ usersData, ridesData, commentsData }) => {
   return db
@@ -8,16 +11,10 @@ const seed = ({ usersData, ridesData, commentsData }) => {
       return db.query(`DROP TABLE IF EXISTS rides`);
     })
     .then(() => {
-      return db.query(`DROP TABLE IF EXISTS users`);
-    })
-    .then(() => {
       return db.query(`DROP TYPE IF EXISTS discipline_type`);
     })
     .then(() => {
       return createDisciplineType();
-    })
-    .then(() => {
-      return createUsers();
     })
     .then(() => {
       return createRides();
@@ -26,26 +23,12 @@ const seed = ({ usersData, ridesData, commentsData }) => {
       return createComments();
     })
     .then(() => {
-      return insertUsers(usersData);
-    })
-    .then(() => {
       return insertRides(ridesData);
     })
     .then(() => {
       return insertComments(commentsData);
     });
 };
-
-function createUsers() {
-  return db.query(`CREATE TABLE users(
-        full_name VARCHAR(100) NOT NULL,
-        username VARCHAR(20) PRIMARY KEY,
-        avatar_img VARCHAR(1000),
-        is_public BOOLEAN DEFAULT true,
-        created_at TIMESTAMP,
-        location VARCHAR(100) NOT NULL
-        )`);
-}
 
 function createDisciplineType() {
   return db.query(`CREATE TYPE discipline_type AS ENUM (
@@ -61,7 +44,7 @@ function createDisciplineType() {
 
 function createRides() {
   return db.query(`CREATE TABLE rides(
-        author VARCHAR(20) REFERENCES users(username) ON DELETE CASCADE,
+        author VARCHAR(20) NOT NULL,
         ride_id SERIAL PRIMARY KEY,
         ride_location JSONB NOT NULL,
         created_at TIMESTAMP,
@@ -81,32 +64,13 @@ function createComments() {
         comment_id SERIAL PRIMARY KEY,
         ride_id INT REFERENCES rides(ride_id) ON DELETE CASCADE,
         body TEXT NOT NULL,
-        author VARCHAR(20) REFERENCES users(username) ON DELETE CASCADE,
+        author VARCHAR(20) NOT NULL,
         created_at TIMESTAMP
         )`);
 }
 
-function insertUsers(data) {
-  const formattedUsers = data.map((user) => {
-    return [
-      user.username,
-      user.full_name,
-      user.avatar_img,
-      user.is_public,
-      user.created_at,
-      user.location,
-    ];
-  });
-  const sqlUsers = format(
-    `INSERT INTO users 
-        (username, full_name, avatar_img, is_public, created_at, location)
-        VALUES %L RETURNING *`,
-    formattedUsers
-  );
-  return db.query(sqlUsers);
-}
-
 function insertRides(data) {
+
     const formattedRides = data.map((ride) => {
     return [
       ride.author,
