@@ -124,7 +124,6 @@ describe("RIDES", () => {
         .get("/api/rides?lat=51.82&long=-3.406&radius=20&sort_by=distance")
         .expect(200)
         .then(({ body }) => {
-          console.log(body.rides);
           expect(body.rides).toBeInstanceOf(Array);
           expect(body.rides.length).toBe(2);
         });
