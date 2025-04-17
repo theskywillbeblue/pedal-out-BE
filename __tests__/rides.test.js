@@ -75,6 +75,49 @@ describe("RIDES", () => {
           expect(body.msg).toBe("Invalid input.");
         });
     });
+    test("200: Get all rides 10 miles of a specified location by default", () => {
+      return request(app)
+        .get("/api/rides?lat=51.82&long=-3.406")
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.rides).toBeInstanceOf(Array);
+          expect(body.rides.length).toBe(1);
+          expect(body.rides[0].ride_id).toBe(1);
+        });
+    });
+    test("200: Get all rides within a specified radius of a specified location", () => {
+      return request(app)
+        .get("/api/rides?lat=51.82&long=-3.406&radius=20")
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.rides).toBeInstanceOf(Array);
+          expect(body.rides.length).toBe(2);
+        });
+    });
+    test("400: Returns an error if latitude is missing", () => {
+      return request(app)
+        .get("/api/rides?long=-3.406&radius=20")
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("400: Returns an error if latitude is given an invalid value", () => {
+      return request(app)
+        .get("/api/rides?lat=fifty&long=-3.406&radius=20")
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("400: Returns an error if radius is given an invalid value", () => {
+      return request(app)
+        .get("/api/rides?lat=51.82&long=-3.406&radius=twenty")
+        .expect(400)
+        .then(({ body }) => {
+          expect(body.msg).toBe("Invalid input.");
+        });
+    });
   });
   describe("GET /api/rides/:ride_id", () => {
     test("200: Get a specific ride by id", () => {

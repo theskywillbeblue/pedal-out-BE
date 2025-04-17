@@ -8,10 +8,21 @@ const {
 exports.fetchRides = async (
   sort_by = "ride_date",
   order = "ASC",
-  discipline
+  discipline,
+  lat,
+  long,
+  radius = 10
 ) => {
   const allowedValues = ["ride_date", "ride_time", "created_at"];
-  if (!allowedValues.includes(sort_by) || (order.toUpperCase() !== "ASC" && order.toUpperCase() !== "DESC")) {
+  if (
+    !allowedValues.includes(sort_by) ||
+    (order.toUpperCase() !== "ASC" && order.toUpperCase() !== "DESC") ||
+    (lat && !long) ||
+    (long && !lat) ||
+    (lat && isNaN(lat)) ||
+    (long && isNaN(long)) ||
+    (radius && isNaN(radius))
+  ) {
     return Promise.reject({ status: 400, msg: "Invalid input." });
   }
   let queryString = `SELECT * FROM rides`;
@@ -21,6 +32,14 @@ exports.fetchRides = async (
     queryString += ` WHERE discipline = $${dollarSign}`;
     dollarSign++;
     queries.push(capitaliseFirstLetter(discipline));
+  }
+  if (lat && long) {
+    if (dollarSign === 1) {
+      queryString += ` WHERE`;
+    } else {
+      queryString += ` AND`;
+    }
+    queryString += ` calculateDistance(radians(${lat}), radians(${long}), radians((ride_location::jsonb ->> 'lat')::float), radians((ride_location::jsonb ->> 'lng')::float)) <= ${radius}*1.60934`;
   }
   queryString += ` ORDER BY ${sort_by} ${
     order.toUpperCase() === "ASC" ? "ASC" : "DESC"
