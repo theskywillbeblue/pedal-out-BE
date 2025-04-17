@@ -26,19 +26,20 @@ exports.findAllFollowersAndFollowing = (req, res, next) => {
     const { username } = req.params;
 
     console.log(`find all followers for ${username}`)
-
     console.log(`NODE_ENV: ${env}`);
     console.log(`Using DB: ${dbName}`);
 
     connectToDB()
         .then((client) => {
             const db = client.db(dbName);
+            console.log('about to call getAllFollowers')
             return getAllFollowers(dbName, db, username)
         })
         .then((result) => {
             res.status(200).send(result);
         })
         .catch((err) => {
+            console.log('error in findAllFollowers', err);
             next(err);
         })
 }

@@ -19,10 +19,15 @@ let isConnected = false;
 
 async function connectToDB() {
     if(!isConnected) {
+        try {
         await client.connect();
         isConnected = true;
         console.log('Connected to MongoDB.')
+    } catch (err) {
+        console.err('Error connecting to MongoDB', err);
+        throw err;
     }
+}
     return client;
 }
 
