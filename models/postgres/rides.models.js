@@ -13,7 +13,7 @@ exports.fetchRides = async (
   long,
   radius = 10
 ) => {
-  const allowedValues = ["ride_date", "ride_time", "created_at"];
+  const allowedValues = ["ride_date", "ride_time", "created_at", "distance"];
   if (
     !allowedValues.includes(sort_by) ||
     (order.toUpperCase() !== "ASC" && order.toUpperCase() !== "DESC") ||
@@ -41,7 +41,7 @@ exports.fetchRides = async (
     }
     queryString += ` calculateDistance(radians(${lat}), radians(${long}), radians((ride_location::jsonb ->> 'lat')::float), radians((ride_location::jsonb ->> 'lng')::float)) <= ${radius}*1.60934`;
   }
-  queryString += ` ORDER BY ${sort_by} ${
+  queryString += ` ORDER BY ${sort_by !== "distance" ? sort_by : `calculateDistance(radians(${lat}), radians(${long}), radians((ride_location::jsonb ->> 'lat')::float), radians((ride_location::jsonb ->> 'lng')::float))`} ${
     order.toUpperCase() === "ASC" ? "ASC" : "DESC"
   }`;
   const { rows } = await db.query(queryString, queries);

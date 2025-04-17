@@ -3,6 +3,7 @@ const seed = require("../db/seeds/seed.js");
 const data = require("../db/data/test-data/index.js");
 const db = require("../db/connection.js");
 const app = require("../app/app.js");
+const rides = require("../db/data/test-data/rides.js");
 
 beforeEach(() => {
   return seed(data);
@@ -116,6 +117,16 @@ describe("RIDES", () => {
         .expect(400)
         .then(({ body }) => {
           expect(body.msg).toBe("Invalid input.");
+        });
+    });
+    test("200: Get all rides within a specified radius of a specified location sorted by distance", () => {
+      return request(app)
+        .get("/api/rides?lat=51.82&long=-3.406&radius=20&sort_by=distance")
+        .expect(200)
+        .then(({ body }) => {
+          console.log(body.rides);
+          expect(body.rides).toBeInstanceOf(Array);
+          expect(body.rides.length).toBe(2);
         });
     });
   });
