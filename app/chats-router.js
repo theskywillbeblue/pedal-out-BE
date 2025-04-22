@@ -14,9 +14,6 @@ chatsRouter
 chatsRouter
 .route('/')
 .post(postNewMessage)
-.get((req, res, next) => {
-    console.log('get route hit wrong');
-    next();
-}, findAllChatsByUserId);
+.get(findAllChatsByUserId);
 
 module.exports = chatsRouter;

@@ -39,7 +39,7 @@ exports.getAllMessages = (req, res, next) => {
 
 exports.findAllChatsByUserId = (req, res, next) => {
     const env = process.env.NODE_ENV || 'development';
-    const dbName = env === 'test' ? 'live-chat' : 'live-chat-dev';
+    const dbName = env === 'test' ? 'live-chat' : 'live-chat-dev'; // make dev version
     const { username } = req.body;
 
 
@@ -48,8 +48,8 @@ exports.findAllChatsByUserId = (req, res, next) => {
         const db = client.db(dbName);
         return fetchAllChatsByUserId(dbName, db, username);
     })
-    .then((result) => {
-        res.status(200).send(result);
+    .then((chatInfo) => {
+        res.status(200).send({chatInfo});
     })
     .catch((err) => {
         next(err);

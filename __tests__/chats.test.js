@@ -80,7 +80,7 @@ describe("GET /api/chats/:chatId", () => {
 })
 
 describe("GET /api/chats", () => {
-    test("200: returns an array of chatIds for the corresponding username", () => {
+    test("200: returns an array of chatIds and chatPartners for the corresponding username", () => {
         return request(app)
         .get('/api/chats')
         .send({
@@ -88,8 +88,9 @@ describe("GET /api/chats", () => {
         })
         .expect(200)
         .then(({body}) => {
-            expect(body.length).toBe(2);
-            expect(body).toEqual(['chat_003', 'chat_001'])
+            const {chatInfo} = body
+            expect(chatInfo[0]).toEqual([ 'chat_003', 'testUser3' ]);
+            expect(chatInfo[1]).toEqual([ 'chat_001', 'testUser2' ])
         })
     })
 })
