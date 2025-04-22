@@ -7,7 +7,7 @@ const supabase = createClient(
   process.env.SUPABASE_ANON_KEY
 );
 
-const seed = ({ usersData, ridesData, commentsData }) => {
+const seed = ({ ridesData, commentsData }) => {
   return db
     .query(`DROP TABLE IF EXISTS comments`)
     .then(() => {
