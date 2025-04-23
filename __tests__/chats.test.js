@@ -82,10 +82,7 @@ describe("GET /api/chats/:chatId", () => {
 describe("GET /api/chats", () => {
     test("200: returns an array of chatIds and chatPartners for the corresponding username", () => {
         return request(app)
-        .get('/api/chats')
-        .send({
-            username: "testUser1"
-        })
+        .get('/api/chats?username=testUser1')
         .expect(200)
         .then(({body}) => {
             const {chatInfo} = body
