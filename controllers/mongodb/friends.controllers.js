@@ -43,7 +43,7 @@ exports.deleteIndividualFriendship = (req, res, next) => {
     const env = process.env.NODE_ENV || 'development';
     const dbName = env === 'test' ? 'friends-test' : 'friends-dev';
     const { username } = req.params;
-    const { followingUsername } = req.body;
+    const { followingUsername } = req.query;
     connectToDB()
         .then((client) => {
             const db = client.db(dbName);

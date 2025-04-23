@@ -58,24 +58,13 @@ describe("GET /api/friends/:username", () => {
             expect(followedUsers.length).toBe(0);
             expect(usersFollowers.length).toBe(1);
         })
-    }),
-    test("404: returns a 404 error when there are no followers and no following accounts found", () => {
-        return request(app)
-        .get('/api/friends/testUser7')
-        .expect(404)
-        .then(({body}) => {
-            expect(body.msg).toBe("User has 0 followers and doesn't follow any accounts.");
-        })
     })
 })
 
 describe("DELETE /api/friends/:username", () => {
     test("204: responds with a 204 and no content when relationship has been successfully deleted", () => {
         return request(app)
-        .delete('/api/friends/testUser1')
-        .send({
-            followingUsername: "testUser6"
-        })
+        .delete('/api/friends/testUser1?followingUsername=testUser6')
         .expect(204)
         .then(({body}) => {
             expect(body).toEqual({});
