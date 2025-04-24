@@ -8,7 +8,7 @@ exports.postNewMessage = async (req, res, next) => {
     const { chatPartner, username, message } = req.body;
 
     await checkChatExists(username, chatPartner)
-    .then((chatId) => {
+    .then(({chatId}) => {
         return addNewMessage(dbName, chatId, chatPartner, message, username);
     })
     .then((result) => {

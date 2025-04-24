@@ -47,7 +47,7 @@ describe("POST /api/chats/chat_001", () => {
         })
     })
 })
-describe("POST /api/chats", () => {
+describe.only("POST /api/chats", () => {
     test("201: returns a document containing message details if the message has successfully posted when a chatId didn't already exists", () => {
         return request(app)
         .post('/api/chats')
