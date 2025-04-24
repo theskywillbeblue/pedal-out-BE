@@ -30,7 +30,7 @@ afterAll(async () => {
     }
 })
 
-describe("POST /api/chats/chat_001", () => {
+describe.only("POST /api/chats/chat_001", () => {
     test("201: returns a document containing message details if the message has successfully posted when a chatId already exists", () => {
         return request(app)
         .post('/api/chats/chat_001')
@@ -47,7 +47,7 @@ describe("POST /api/chats/chat_001", () => {
         })
     })
 })
-describe.only("POST /api/chats", () => {
+describe("POST /api/chats", () => {
     test("201: returns a document containing message details if the message has successfully posted when a chatId didn't already exists", () => {
         return request(app)
         .post('/api/chats')

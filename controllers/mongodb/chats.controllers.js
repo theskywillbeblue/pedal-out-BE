@@ -6,17 +6,16 @@ exports.postNewMessage = async (req, res, next) => {
     const env = process.env.NODE_ENV || 'development';
     const dbName = env === 'test' ? 'live-chat' : 'live-chat-dev';
     const { chatPartner, username, message } = req.body;
+    const chatIdParam = req.params.chatId;
 
-    await checkChatExists(username, chatPartner)
-    .then(({chatId}) => {
-        return addNewMessage(dbName, chatId, chatPartner, message, username);
-    })
-    .then((result) => {
+    try {
+        const chatIdToUse = chatIdParam
+        ? chatIdParam : await checkChatExists(username, chatPartner);
+        const result = await addNewMessage(dbName, chatIdToUse, chatPartner, message, username);
         res.status(201).send(result)
-    })
-    .catch((err) => {
+    } catch (err) {
         next(err);
-    })
+    }
 }
 
 exports.getAllMessages = (req, res, next) => {
