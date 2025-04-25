@@ -30,7 +30,7 @@ afterAll(async () => {
     }
 })
 
-describe.only("POST /api/chats/chat_001", () => {
+describe("POST /api/chats/chat_001", () => {
     test("201: returns a document containing message details if the message has successfully posted when a chatId already exists", () => {
         return request(app)
         .post('/api/chats/chat_001')
@@ -41,6 +41,7 @@ describe.only("POST /api/chats/chat_001", () => {
         })
         .expect(201)
         .then(({ body }) => {
+            console.log(body);
             expect(typeof body).toEqual('object');
             expect(body.acknowledged).toBe(true);
             expect(body.insertedId).toBeDefined();
@@ -58,6 +59,7 @@ describe("POST /api/chats", () => {
         })
         .expect(201)
         .then(({ body }) => {
+            console.log(body)
             expect(typeof body).toEqual('object');
             expect(body.acknowledged).toBe(true);
             expect(body.insertedId).toBeDefined();

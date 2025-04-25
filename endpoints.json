@@ -23,7 +23,126 @@
             ]
         }
     },
-    "PATCH /api/comments/comment_id": {
+    "GET /api/rides/:ride_id": {
+        "description": "serves up a ride object with all details",
+        "queries": [],
+        "exampleResponse": {
+            "ride":
+                {
+                    "author": "will_clarke_2025",
+                    "ride_id": 1,
+                    "ride_location": "{ lat: 51.8197, lng: -3.4063 }",
+                    "created_at": "2025-03-03T13:22:49Z",
+                    "ride_date": "2025-04-20",
+                    "ride_time": "10:30",
+                    "description": "Gonna hit some jumps and tech lines at BPW. Bring pads and let’s send it!",
+                    "discipline": "Downhill",
+                    "title": "Shred Day at BPW – Jumps, Berms & Gnar!",
+                    "is_public": true,
+                    "participants": {}
+                }
+        }
+    },
+    "POST /api/rides": {
+        "description": "returns an object of the newly created ride",
+        "queries": [],
+        "exampleRequest": {
+            "author": "will_clarke_2025",
+            "ride_location": { "lat": 60, "lng": -5 },
+            "ride_date": "2025-05-24",
+            "ride_time": "06:30",
+            "description": "A really great ride.",
+            "discipline": "Downhill",
+            "title": "A great ride",
+            "is_public": true,
+            "participants": "{'will_clarke_2025'}"
+          },
+        "exampleResponse": { 
+            "ride": {
+                "author": "will_clarke_2025",
+                "ride_id": 10,
+                "created_at": "2025-03-03T13:22:49Z",
+                "ride_location": { "lat": 60, "lng": -5 },
+                "ride_date": "2025-05-24",
+                "ride_time": "06:30",
+                "description": "A really great ride.",
+                "discipline": "Downhill",
+                "title": "A great ride",
+                "is_public": true,
+                "participants": "{'will_clarke_2025'}"
+              }
+        }
+    },
+    "DELETE /api/rides/:ride_id": {
+        "description": "serves a 204 error code, providing no content when request has successfully deleted article and corresponding comments",
+        "queries": [],
+        "exampleResponse": {
+        }
+    },
+    "PATCH /api/rides/:ride_id": {
+        "description": "serves with an updated ride object if the ride is successfully updated",
+        "queries": [],
+        "exampleRequest": {
+            "is_public": false
+          },
+        "exampleResponse": { 
+            "ride": {
+                "author": "will_clarke_2025",
+                "ride_id": 10,
+                "created_at": "2025-03-03T13:22:49Z",
+                "ride_location": { "lat": 60, "lng": -5 },
+                "ride_date": "2025-05-24",
+                "ride_time": "06:30",
+                "description": "A really great ride.",
+                "discipline": "Downhill",
+                "title": "A great ride",
+                "is_public": false,
+                "participants": "{'will_clarke_2025'}"
+              }
+        }
+    },
+    "GET /api/rides/:ride_id/comments": {
+        "description": "serves up an array of all comments for the specified ride",
+        "queries": [],
+        "exampleResponse": {
+            "comments": [
+                {
+                    "comment_id": 6,
+                    "ride_id": 1,
+                    "body": "Great mix of trails, really enjoyed this route.",
+                    "author": "jwilson_rider42795",
+                    "created_at": "2025-01-29T07:24:19.000Z"
+                },
+                {
+                    "comment_id": 39,
+                    "ride_id": 1,
+                    "body": "Can't wait – this looks mint!",
+                    "author": "alex_davies_2025",
+                    "created_at": "2025-01-21T09:42:18.000Z"
+                }
+            ]
+        }
+    },
+    "POST /api/rides/:ride_id/comments": {
+        "description": "serves newly made comment",
+        "queries": [],
+        "exampleRequest": {
+            "author": "will_clarke_2025",
+            "created_at": "2025-03-05T19:14:08",
+            "body": "Test."
+        },
+        "exampleResponse": {
+            "comment":
+                {
+                    "comment_id": 16,
+                    "ride_id": 1,
+                    "body": "Test.",
+                    "author": "will_clarke_2025",
+                    "created_at": "2025-03-05T19:14:08"
+                }
+        }
+    },
+    "PATCH /api/comments/:comment_id": {
         "description": "serves an updated comment with new body as per the client's request",
         "queries": [],
         "exampleRequest": {
@@ -41,10 +160,105 @@
             ]
         }
     },
-    "DELETE /api/comments/comment_id": {
+    "DELETE /api/comments/:comment_id": {
         "description": "serves a 204 error code, providing no content when request has successfully deleted article and corresponding comments",
         "queries": [],
         "exampleResponse": {
         }
+    },
+    "GET /api/friends/:username": {
+        "description": "serves up an array of a users followers and the other users that user follows",
+        "queries": [],
+        "exampleResponse": {
+            "followedUsers": [
+                "sophie-bike-mad",
+                "Joey1454"
+                ],
+            "usersFollowers": [
+                "Joey1454",
+                "jaymulholland"
+                ]
+            }
+    },
+    "POST /api/friends/:username": {
+        "description": "returns a new friendshipId when new following relationship has successfully been made",
+        "queries": [],
+        "exampleRequest": {
+            "followingUsername": "newUser10"
+        },
+        "exampleResponse": { 
+            "friendshipId": "680b62bda4c3915bd54fe1c9"
+        }
+    },
+    "DELETE /api/friends/:username": {
+        "description": "serves a 204 error code, providing no content when request has successfully unfollowed a user",
+        "queries": [],
+        "exampleResponse": {
+        }
+    },
+    "GET /api/chats/:chatId": {
+        "description": "serves up an array of a messages for the corresponding chatId",
+        "queries": [],
+        "exampleResponse": [
+            {
+                "_id": "6807484fa935c749f827aa22",
+                "chatId": "chat_001",
+                "participants": [
+                    "jwilson_rider42795",
+                    "will_clarke_2025"
+                    ],
+                "sentBy": "jwilson_rider42795",
+                "message": "Yo Will, you free for a ride this weekend? Thinking about hitting that new trail near Ridgeway.",
+                "sentAt": "2025-04-20T16:42:10Z"
+            },
+            {
+                "_id": "6807484fa935c749f827aa23",
+                "chatId": "chat_001",
+                "participants": [
+                    "jwilson_rider42795",
+                    "will_clarke_2025"
+                    ],
+                "sentBy": "will_clarke_2025",
+                "message": "Heard it's got some solid climbs! I’m definitely keen. Saturday morning work?",
+                "sentAt": "2025-04-20T16:45:02Z"
+            }
+        ]
+    },
+    "POST /api/chats/:chatId": {
+        "description": "returns document containing all the new message details",
+        "queries": [],
+        "exampleRequest": {
+            "chatPartner": "testUser2",
+            "username": "testUser1",
+            "message": "Hi, this is a test message."
+        },
+        "exampleResponse": { 
+            "acknowledged": true, 
+            "insertedId": "680b640c7c7a12e7a3dc1709" 
+        }
+    },
+    "POST /api/chats": {
+        "description": "returns document containing all the new message details for a new chat that doesn't have an existing chatId",
+        "queries": [],
+        "exampleRequest": {
+            "chatPartner": "testUser7",
+            "username": "testUser1",
+            "message": "Hi, this is a test message for a new chat."
+        },
+        "exampleResponse": { 
+            "acknowledged": true, 
+            "insertedId": "680b640c7c7a12e7a3dc1706" 
+        }
+    },
+    "GET /api/chats": {
+        "description": "serves up an array of chatIds and chatPartners for the corresponding username",
+        "queries": ["username"],
+        "exampleResponse": {
+            "chatInfo": [
+                ["chat_001", "will_clarke_2025"],
+                ["chat_006", "sophiaP_2025xyzq"]
+            ]
+        }
     }
+
 }

@@ -5,10 +5,7 @@ const chatsRouter = express.Router();
 
 chatsRouter
 .route('/:chatId')
-.get((req, res, next) => {
-    console.log('get route hit');
-    next();
-}, getAllMessages)
+.get(getAllMessages)
 .post(postNewMessage);
 
 chatsRouter

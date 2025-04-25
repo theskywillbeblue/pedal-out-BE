@@ -1,7 +1,7 @@
 const request = require("supertest");
 const app = require('../app/app.js');
 const {seedTestData} = require('../db/seeds/seed-mongodb.js');
-const {connectToDB, closeDBConnection} = require('../db/mongodb-connection.js');
+const {closeDBConnection} = require('../db/mongodb-connection.js');
 
 beforeEach(() => {
     return seedTestData();
